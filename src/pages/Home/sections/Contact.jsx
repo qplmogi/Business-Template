@@ -6,19 +6,19 @@ const contactInfo = [
   {
     icon: '📍',
     label: 'آدرس',
-    value: 'تهران، خیابان ولیعصر، پلاک ۱۲۰',
-    sub: 'طبقه سوم، واحد ۸',
+    value: 'مازندران خیابان فرهنگ ',
+    sub: 'طبقه دوم  ',
   },
   {
     icon: '📞',
     label: 'تلفن',
-    value: '۰۲۱-۸۸۴۴۵۵۶۶',
+    value: '۰۹۱۱۶۷۶۹۵۷۷',
     sub: 'شنبه تا چهارشنبه، ۹ تا ۱۸',
   },
   {
     icon: '✉️',
     label: 'ایمیل',
-    value: 'hello@novindigital.ir',
+    value: 'hello@gmail.com',
     sub: 'پاسخ در کمتر از ۲۴ ساعت',
   },
 ];

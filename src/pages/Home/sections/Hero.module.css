@@ -96,7 +96,7 @@
   top: -160px;
   left: -100px;
   border-radius: 50%;
-  border: 1px solid rgba(37,99,235,0.08);
+  border: 1px solid rgba(37, 100, 235, 0.05);
   transition: transform 1.5s cubic-bezier(0.23,1,0.32,1);
 }
 
@@ -110,7 +110,7 @@
   top: -80px;
   left: -40px;
   border-radius: 50%;
-  border: 1px solid rgba(37,99,235,0.05);
+  border: 1px solid rgba(37, 100, 235, 0.089);
 }
 
 /* حلقه سوم — پایین */
@@ -222,7 +222,7 @@
   flex-direction: column;
   min-height: 100vh;
   min-height: 100dvh;
-  padding-top: calc(var(--navbar-h) + 16px);
+  padding-top: calc(var(--navbar-h) + 0px);
   padding-bottom: 36px;
 }
 
@@ -233,7 +233,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 8px;
+  padding-top: 5px;
 }
 
 .brandMark {
