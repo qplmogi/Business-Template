@@ -1,0 +1,32 @@
+﻿.base {
+    transition-property: opacity, transform;
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+  
+  .fadeUp    { opacity: 0; transform: translateY(28px); }
+  .fadeIn    { opacity: 0; transform: translateY(0);    }
+  .fadeRight { opacity: 0; transform: translateX(-28px); }
+  .fadeLeft  { opacity: 0; transform: translateX(28px);  }
+  
+  .visible {
+    opacity: 1 !important;
+    transform: translate(0, 0) !important;
+    will-change: auto;
+  }
+  
+  /* موبایل — کمتر حرکت */
+  @media (max-width: 768px) {
+    .fadeUp    { transform: translateY(18px); }
+    .fadeRight { transform: translateX(-16px); }
+    .fadeLeft  { transform: translateX(16px);  }
+  }
+  
+  /* reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .base { transition: none !important; }
+    .fadeUp, .fadeIn,
+    .fadeRight, .fadeLeft { opacity: 1; transform: none; }
+  }

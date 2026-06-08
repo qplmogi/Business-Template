@@ -1,0 +1,134 @@
+﻿@import './variables.css';
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+* { min-width: 0; }
+
+html {
+    direction: rtl;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    scroll-padding-top: calc(var(--navbar-h) + 12px);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+html { scroll-behavior: smooth; }
+}
+
+body {
+font-family: var(--font-family);
+background-color: var(--color-bg);
+color: var(--color-text);
+line-height: 1.7;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+text-rendering: optimizeLegibility;
+overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+line-height: 1.25;
+font-weight: 700;
+color: var(--color-secondary);
+text-wrap: balance;
+}
+
+p {
+line-height: 1.75;
+text-wrap: pretty;
+}
+
+a {
+text-decoration: none;
+color: inherit;
+}
+
+ul { list-style: none; }
+
+img, svg {
+max-width: 100%;
+display: block;
+height: auto;
+}
+
+button {
+cursor: pointer;
+font-family: var(--font-family);
+border: none;
+outline: none;
+background: none;
+}
+
+input, textarea, select {
+font-family: var(--font-family);
+font-size: max(16px, 1rem);
+}
+
+.container {
+width: 100%;
+max-width: var(--container-max);
+margin: 0 auto;
+padding: 0 var(--container-px);
+}
+
+* { -webkit-tap-highlight-color: transparent; }
+
+button, a, [role="button"] {
+min-height: 44px;
+min-width: 44px;
+}
+
+:focus-visible {
+outline: 2px solid var(--color-primary);
+outline-offset: 3px;
+border-radius: 4px;
+}
+
+:focus:not(:focus-visible) { outline: none; }
+
+::selection {
+background: rgba(37, 99, 235, 0.15);
+color: var(--color-secondary);
+}
+
+@media (min-width: 768px) and (hover: hover) {
+::-webkit-scrollbar       { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-text-light);
+}
+}
+
+#root {
+overflow-x: hidden;
+position: relative;
+isolation: isolate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+*, *::before, *::after {
+    animation-duration:        0.01ms !important;
+    animation-iteration-count: 1      !important;
+    transition-duration:       0.01ms !important;
+}
+}
+
+:target {
+scroll-margin-top: calc(var(--navbar-h) + 12px);
+}
+
+section {
+position: relative;
+isolation: isolate;
+}
