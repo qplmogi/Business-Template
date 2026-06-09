@@ -14,12 +14,19 @@ function Hero() {
 
         {/* ── پس‌زمینه ── */}
         <div className={styles.bg} aria-hidden="true">
-            <div className={styles.bgGrid} />
-            <div className={styles.bgNoise} />
-            <div className={styles.bgOrb} />
+            <div className={styles.bgGradient} />
+            <div className={styles.bgStripes} />
+            <div className={styles.bgOrb1} />
+            <div className={styles.bgOrb2} />
+            <div className={styles.bgBlob1} />
+            <div className={styles.bgBlob2} />
             <div className={styles.bgRing1} />
             <div className={styles.bgRing2} />
             <div className={styles.bgRing3} />
+            <div className={styles.bgGlassCard} />
+            <div className={styles.bgGlassCard2} />
+            <div className={styles.bgLine} />
+            <div className={styles.bgDots} />
             <div className={styles.geoCross} />
             <div className={styles.geoSquare} />
         </div>

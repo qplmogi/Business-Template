@@ -1,5 +1,5 @@
 ﻿/* ════════════════════════════════
-   HERO — Editorial Light
+   HERO
 ════════════════════════════════ */
 .hero {
   position: relative;
@@ -12,7 +12,7 @@
 }
 
 /* ════════════════════════════════
-   BACKGROUND
+   BACKGROUND SYSTEM
 ════════════════════════════════ */
 .bg {
   position: absolute;
@@ -21,169 +21,364 @@
   z-index: 0;
 }
 
-/* گرادیان اصلی */
+/* ── لایه اول: Mesh Gradient اصلی ── */
 .bgGradient {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 80% 60% at 110% -10%, rgba(37,99,235,0.07) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 80% at -10% 110%, rgba(56,189,248,0.06) 0%, transparent 55%),
-    radial-gradient(ellipse 40% 40% at 50% 50%, rgba(37,99,235,0.03) 0%, transparent 70%);
+    radial-gradient(ellipse 70% 60% at 15% 15%,  rgba(37,99,235,0.09)  0%, transparent 55%),
+    radial-gradient(ellipse 55% 70% at 90% 85%,  rgba(56,189,248,0.08) 0%, transparent 55%),
+    radial-gradient(ellipse 45% 50% at 85% 10%,  rgba(37,99,235,0.05)  0%, transparent 50%),
+    radial-gradient(ellipse 60% 40% at 10% 90%,  rgba(56,189,248,0.05) 0%, transparent 50%),
+    radial-gradient(ellipse 80% 80% at 50% 50%,  rgba(37,99,235,0.025) 0%, transparent 70%);
 }
 
-/* خطوط مورب — تکستچر ظریف */
+/* ── لایه دوم: بافت مورب ظریف ── */
 .bgStripes {
   position: absolute;
   inset: 0;
   background-image: repeating-linear-gradient(
-    -55deg,
+    -52deg,
     transparent,
-    transparent 40px,
-    rgba(37,99,235,0.018) 40px,
-    rgba(37,99,235,0.018) 41px
+    transparent 52px,
+    rgba(37,99,235,0.016) 52px,
+    rgba(37,99,235,0.016) 53px
   );
-  mask-image: radial-gradient(ellipse 90% 90% at 50% 50%, black 30%, transparent 100%);
-  -webkit-mask-image: radial-gradient(ellipse 90% 90% at 50% 50%, black 30%, transparent 100%);
-}
-
-/* orb اصلی — آبی */
-.bgOrb1 {
-  position: absolute;
-  width: clamp(360px, 50vw, 640px);
-  height: clamp(360px, 50vw, 640px);
-  top: -180px;
-  left: -120px;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle at 35% 35%,
-    rgba(37,99,235,0.14) 0%,
-    rgba(37,99,235,0.06) 40%,
-    transparent 70%
-  );
-  transition: transform 2s cubic-bezier(0.23,1,0.32,1);
-}
-
-.hero:hover .bgOrb1 {
-  transform: translate(12px, -12px) scale(1.03);
-}
-
-/* orb ثانویه — accent */
-.bgOrb2 {
-  position: absolute;
-  width: clamp(240px, 35vw, 480px);
-  height: clamp(240px, 35vw, 480px);
-  bottom: -80px;
-  right: -60px;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle at 60% 60%,
-    rgba(56,189,248,0.11) 0%,
-    rgba(56,189,248,0.04) 45%,
-    transparent 70%
-  );
-  transition: transform 2.2s cubic-bezier(0.23,1,0.32,1);
-}
-
-.hero:hover .bgOrb2 {
-  transform: translate(-10px, 10px) scale(1.04);
-}
-
-/* حلقه اول */
-.bgRing1 {
-  position: absolute;
-  width: clamp(320px, 45vw, 560px);
-  height: clamp(320px, 45vw, 560px);
-  top: -160px;
-  left: -100px;
-  border-radius: 50%;
-  border: 1px solid rgba(37, 100, 235, 0.05);
-  transition: transform 1.5s cubic-bezier(0.23,1,0.32,1);
-}
-
-.hero:hover .bgRing1 { transform: scale(1.04) rotate(3deg); }
-
-/* حلقه دوم */
-.bgRing2 {
-  position: absolute;
-  width: clamp(180px, 25vw, 320px);
-  height: clamp(180px, 25vw, 320px);
-  top: -80px;
-  left: -40px;
-  border-radius: 50%;
-  border: 1px solid rgba(37, 100, 235, 0.089);
-}
-
-/* حلقه سوم — پایین */
-.bgRing3 {
-  position: absolute;
-  width: 160px;
-  height: 160px;
-  bottom: 100px;
-  right: 8%;
-  border-radius: 50%;
-  border: 1px solid rgba(56,189,248,0.1);
-}
-
-/* خط مورب دکوراتیو */
-.bgLine {
-  position: absolute;
-  width: 1px;
-  height: clamp(200px, 30vh, 360px);
-  background: linear-gradient(
-    180deg,
-    transparent 0%,
-    rgba(37,99,235,0.15) 40%,
-    rgba(37,99,235,0.08) 70%,
+  -webkit-mask-image: radial-gradient(
+    ellipse 100% 100% at 50% 50%,
+    black 0%,
     transparent 100%
   );
-  top: 15%;
-  right: 18%;
-  transform: rotate(20deg);
+  mask-image: radial-gradient(
+    ellipse 100% 100% at 50% 50%,
+    black 0%,
+    transparent 100%
+  );
 }
 
-/* نقطه‌های دکوراتیو */
-.bgDots {
+/* ════════════════════════════════
+   SHAPES — اشکال شناور سه‌بعدی
+════════════════════════════════ */
+
+/* ── شکل اصلی — کره بزرگ ── */
+.bgOrb1 {
   position: absolute;
-  bottom: 15%;
-  left: 5%;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  opacity: 0.25;
+  width: clamp(480px, 60vw, 780px);
+  height: clamp(480px, 60vw, 780px);
+  top: -220px;
+  left: -180px;
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle at 32% 28%,
+      rgba(255,255,255,0.85) 0%,
+      rgba(37,99,235,0.12)  20%,
+      rgba(56,189,248,0.08)  45%,
+      transparent 65%
+    );
+  animation: drift1 18s ease-in-out infinite;
+  will-change: transform;
 }
 
-.bgDots::before,
-.bgDots::after {
+@keyframes drift1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(16px, -24px) scale(1.02); }
+  66%       { transform: translate(-12px, 18px) scale(0.99); }
+}
+
+/* ── کره کوچک‌تر — accent ── */
+.bgOrb2 {
+  position: absolute;
+  width: clamp(280px, 36vw, 520px);
+  height: clamp(280px, 36vw, 520px);
+  bottom: -100px;
+  right: -80px;
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle at 62% 38%,
+      rgba(255,255,255,0.7)  0%,
+      rgba(56,189,248,0.1)  25%,
+      rgba(37,99,235,0.06)  50%,
+      transparent 68%
+    );
+  animation: drift2 22s ease-in-out infinite;
+  animation-delay: -6s;
+  will-change: transform;
+}
+
+@keyframes drift2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  40%       { transform: translate(-18px, -14px) scale(1.03); }
+  70%       { transform: translate(14px, 20px) scale(0.98); }
+}
+
+/* ── شکل تخم‌مرغی — middle layer ── */
+.bgBlob1 {
+  position: absolute;
+  width: clamp(200px, 28vw, 380px);
+  height: clamp(240px, 34vw, 460px);
+  top: 20%;
+  right: 8%;
+  border-radius: 60% 40% 52% 48% / 48% 55% 45% 52%;
+  background:
+    radial-gradient(
+      ellipse at 40% 35%,
+      rgba(255,255,255,0.6)  0%,
+      rgba(37,99,235,0.07)  35%,
+      rgba(56,189,248,0.04)  60%,
+      transparent 75%
+    );
+  animation: morph1 14s ease-in-out infinite;
+  animation-delay: -3s;
+  will-change: transform, border-radius;
+}
+
+@keyframes morph1 {
+  0%, 100% {
+    border-radius: 60% 40% 52% 48% / 48% 55% 45% 52%;
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    border-radius: 48% 52% 40% 60% / 55% 45% 55% 45%;
+    transform: translate(-8px, 14px) rotate(3deg);
+  }
+  50% {
+    border-radius: 52% 48% 60% 40% / 40% 60% 40% 60%;
+    transform: translate(10px, -10px) rotate(-2deg);
+  }
+  75% {
+    border-radius: 44% 56% 48% 52% / 52% 48% 52% 48%;
+    transform: translate(-6px, 8px) rotate(1deg);
+  }
+}
+
+/* ── شکل دوم — bottom left ── */
+.bgBlob2 {
+  position: absolute;
+  width: clamp(160px, 20vw, 280px);
+  height: clamp(180px, 22vw, 320px);
+  bottom: 10%;
+  left: 12%;
+  border-radius: 45% 55% 60% 40% / 52% 48% 55% 45%;
+  background:
+    radial-gradient(
+      ellipse at 55% 45%,
+      rgba(56,189,248,0.08) 0%,
+      rgba(37,99,235,0.04)  40%,
+      transparent 65%
+    );
+  animation: morph2 16s ease-in-out infinite;
+  animation-delay: -8s;
+  will-change: transform, border-radius;
+}
+
+@keyframes morph2 {
+  0%, 100% {
+    border-radius: 45% 55% 60% 40% / 52% 48% 55% 45%;
+    transform: translate(0, 0);
+  }
+  33% {
+    border-radius: 55% 45% 48% 52% / 44% 56% 46% 54%;
+    transform: translate(12px, -16px);
+  }
+  66% {
+    border-radius: 50% 50% 42% 58% / 58% 42% 52% 48%;
+    transform: translate(-10px, 12px);
+  }
+}
+
+/* ════════════════════════════════
+   GLASS RINGS — حلقه‌های شیشه‌ای
+════════════════════════════════ */
+.bgRing1 {
+  position: absolute;
+  width: clamp(380px, 52vw, 680px);
+  height: clamp(380px, 52vw, 680px);
+  top: -200px;
+  left: -160px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(37,99,235,0.07);
+  animation: ringRotate1 35s linear infinite;
+  will-change: transform;
+}
+
+@keyframes ringRotate1 {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* نقطه روی حلقه */
+.bgRing1::before {
   content: '';
-  display: block;
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(37,99,235,0.25);
+  top: 15%;
+  right: 5%;
+  box-shadow: 0 0 12px rgba(37,99,235,0.15);
+}
+
+.bgRing2 {
+  position: absolute;
+  width: clamp(260px, 36vw, 480px);
+  height: clamp(260px, 36vw, 480px);
+  top: -130px;
+  left: -100px;
+  border-radius: 50%;
+  border: 1px solid rgba(56,189,248,0.05);
+  animation: ringRotate2 48s linear infinite;
+  will-change: transform;
+}
+
+@keyframes ringRotate2 {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(-360deg); }
+}
+
+.bgRing3 {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  bottom: 12%;
+  right: 6%;
+  border-radius: 50%;
+  border: 1px solid rgba(37,99,235,0.08);
+  animation: ringRotate3 28s linear infinite;
+  animation-delay: -10s;
+  will-change: transform;
+}
+
+@keyframes ringRotate3 {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.bgRing3::before {
+  content: '';
+  position: absolute;
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: var(--color-primary);
+  background: rgba(56,189,248,0.3);
+  top: 8%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-.bgDots::after {
-  width: 3px;
-  height: 3px;
-  opacity: 0.5;
-  margin-right: 8px;
+/* ════════════════════════════════
+   GLASS CARD — کارت شیشه‌ای شناور
+════════════════════════════════ */
+.bgGlassCard {
+  position: absolute;
+  width: clamp(100px, 14vw, 180px);
+  height: clamp(60px, 8vw, 100px);
+  top: 22%;
+  right: 3%;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.45);
+  border: 1px solid rgba(255,255,255,0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow:
+    0 4px 24px rgba(37,99,235,0.06),
+    inset 0 1px 0 rgba(255,255,255,0.8);
+  animation: floatCard 12s ease-in-out infinite;
+  animation-delay: -4s;
+  will-change: transform;
 }
 
-/* اشکال هندسی */
+/* highlight داخلی */
+.bgGlassCard::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 40%;
+  border-radius: 16px 16px 0 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.6) 0%,
+    transparent 100%
+  );
+}
+
+/* خطوط داخل کارت */
+.bgGlassCard::after {
+  content: '';
+  position: absolute;
+  bottom: 20px;
+  left: 16px;
+  right: 16px;
+  height: 1px;
+  background: rgba(37,99,235,0.1);
+  box-shadow: 0 6px 0 rgba(37,99,235,0.06), 0 12px 0 rgba(37,99,235,0.04);
+}
+
+@keyframes floatCard {
+  0%, 100% { transform: translate(0, 0) rotate(-1deg); }
+  33%       { transform: translate(-6px, -12px) rotate(0.5deg); }
+  66%       { transform: translate(4px, 8px) rotate(-2deg); }
+}
+
+/* کارت شیشه‌ای دوم — کوچک */
+.bgGlassCard2 {
+  position: absolute;
+  width: clamp(70px, 10vw, 120px);
+  height: clamp(44px, 6vw, 72px);
+  bottom: 22%;
+  left: 4%;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.35);
+  border: 1px solid rgba(255,255,255,0.65);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow:
+    0 3px 16px rgba(56,189,248,0.07),
+    inset 0 1px 0 rgba(255,255,255,0.75);
+  animation: floatCard2 15s ease-in-out infinite;
+  animation-delay: -7s;
+  will-change: transform;
+}
+
+.bgGlassCard2::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 35%;
+  border-radius: 12px 12px 0 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.55) 0%,
+    transparent 100%
+  );
+}
+
+@keyframes floatCard2 {
+  0%, 100% { transform: translate(0, 0) rotate(1.5deg); }
+  40%       { transform: translate(8px, -10px) rotate(-0.5deg); }
+  70%       { transform: translate(-5px, 7px) rotate(2deg); }
+}
+
+/* ════════════════════════════════
+   GEOMETRIC — اشکال هندسی
+════════════════════════════════ */
 .geoCross {
   position: absolute;
   top: 42%;
   right: 4%;
-  width: 18px;
-  height: 18px;
-  opacity: 0.12;
+  width: 16px;
+  height: 16px;
+  opacity: 0.18;
+  animation: fadeInOut 8s ease-in-out infinite;
 }
 
 .geoCross::before,
 .geoCross::after {
   content: '';
   position: absolute;
-  background: var(--color-secondary);
+  background: var(--color-primary);
   border-radius: 1px;
 }
 
@@ -199,18 +394,93 @@
   transform: translateX(-50%);
 }
 
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0.18; }
+  50%       { opacity: 0.06; }
+}
+
 .geoSquare {
   position: absolute;
   bottom: 18%;
   right: 5%;
-  width: 32px;
-  height: 32px;
-  border: 1px solid rgba(37,99,235,0.15);
-  transform: rotate(15deg);
-  transition: transform 1.2s ease;
+  width: 28px;
+  height: 28px;
+  border: 1px solid rgba(37,99,235,0.18);
+  animation: squareSpin 20s linear infinite;
+  will-change: transform;
 }
 
-.hero:hover .geoSquare { transform: rotate(28deg); }
+@keyframes squareSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* نقطه‌های دکوراتیو */
+.bgDots {
+  position: absolute;
+  bottom: 15%;
+  left: 5%;
+  opacity: 0.2;
+  animation: fadeInOut 10s ease-in-out infinite;
+  animation-delay: -3s;
+}
+
+.bgDots::before,
+.bgDots::after {
+  content: '';
+  display: block;
+  border-radius: 50%;
+  background: var(--color-primary);
+}
+
+.bgDots::before {
+  width: 4px;
+  height: 4px;
+  margin-bottom: 10px;
+}
+
+.bgDots::after {
+  width: 3px;
+  height: 3px;
+  margin-right: 8px;
+  opacity: 0.6;
+}
+
+/* خط عمودی دکوراتیو */
+.bgLine {
+  position: absolute;
+  width: 1px;
+  height: clamp(160px, 25vh, 280px);
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(37,99,235,0.12) 35%,
+    rgba(56,189,248,0.08) 70%,
+    transparent 100%
+  );
+  top: 18%;
+  right: 20%;
+  transform: rotate(18deg);
+  animation: lineBreath 12s ease-in-out infinite;
+  animation-delay: -5s;
+}
+
+@keyframes lineBreath {
+  0%, 100% { opacity: 1; transform: rotate(18deg) scaleY(1); }
+  50%       { opacity: 0.4; transform: rotate(18deg) scaleY(0.7); }
+}
+
+/* reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .bgOrb1, .bgOrb2,
+  .bgBlob1, .bgBlob2,
+  .bgRing1, .bgRing2, .bgRing3,
+  .bgGlassCard, .bgGlassCard2,
+  .geoSquare, .geoCross,
+  .bgDots, .bgLine {
+    animation: none;
+  }
+}
 
 /* ════════════════════════════════
    LAYOUT
@@ -222,7 +492,7 @@
   flex-direction: column;
   min-height: 100vh;
   min-height: 100dvh;
-  padding-top: calc(var(--navbar-h) + 0px);
+  padding-top: calc(var(--navbar-h) + 16px);
   padding-bottom: 36px;
 }
 
@@ -233,7 +503,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 5px;
+  padding-top: 8px;
 }
 
 .brandMark {
@@ -255,10 +525,6 @@
 @keyframes breathe {
   0%, 100% { opacity: 1; transform: scale(1); }
   50%       { opacity: 0.4; transform: scale(0.7); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .brandDot { animation: none; }
 }
 
 .brandName {
@@ -320,7 +586,6 @@
   padding-bottom: 72px;
 }
 
-/* eyebrow */
 .eyebrowTag {
   display: inline-flex;
   align-items: center;
@@ -349,7 +614,6 @@
   white-space: nowrap;
 }
 
-/* تیتر اصلی */
 .mainTitle {
   font-size: clamp(44px, 8vw, 88px);
   font-weight: 800;
@@ -362,10 +626,7 @@
   gap: 2px;
 }
 
-.titleLine1 {
-  color: var(--color-secondary);
-  display: block;
-}
+.titleLine1 { color: var(--color-secondary); display: block; }
 
 .titleLine2 {
   display: block;
@@ -394,20 +655,8 @@
   -webkit-text-stroke: 0;
 }
 
-.titleLine3 {
-  color: var(--color-secondary);
-  display: block;
-}
+.titleLine3 { color: var(--color-secondary); display: block; }
 
-/* gradient روی کلمه کلیدی */
-.titleLine3 span {
-  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* sub zone */
 .subZone {
   display: flex;
   align-items: center;
@@ -439,7 +688,6 @@
   flex-shrink: 0;
 }
 
-/* CTA */
 .ctaGroup {
   display: flex;
   flex-direction: column;
@@ -588,30 +836,24 @@
   100% { left: 100%; }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .scrollLine::after  { animation: none; left: 0; }
-  .bgOrb1, .bgOrb2    { transition: none; }
-  .bgRing1            { transition: none; }
-  .geoSquare          { transition: none; }
-}
-
 /* ════════════════════════════════
    TABLET
 ════════════════════════════════ */
 @media (max-width: 1024px) {
-  .topMeta    { display: none; }
-  .floatLabel { display: none; }
-  .bgLine     { display: none; }
-  .geoCross   { display: none; }
+  .topMeta      { display: none; }
+  .floatLabel   { display: none; }
+  .bgLine       { display: none; }
+  .geoCross     { display: none; }
+  .bgGlassCard  { width: 120px; height: 70px; }
+  .bgGlassCard2 { display: none; }
 }
 
 /* ════════════════════════════════
    MOBILE
 ════════════════════════════════ */
 @media (max-width: 768px) {
-  .inner { padding-bottom: 28px; }
-
-  .headlineZone { padding-bottom: 32px; }
+  .inner          { padding-bottom: 28px; }
+  .headlineZone   { padding-bottom: 32px; }
 
   .mainTitle {
     font-size: clamp(36px, 10vw, 52px);
@@ -620,13 +862,9 @@
     gap: 0;
   }
 
-  .titleLine2 {
-    -webkit-text-stroke: 1px rgba(15,23,42,0.18);
-  }
-
-  .inlineBadge { display: none; }
-
-  .eyebrowTag  { margin-bottom: 20px; }
+  .titleLine2     { -webkit-text-stroke: 1px rgba(15,23,42,0.18); }
+  .inlineBadge    { display: none; }
+  .eyebrowTag     { margin-bottom: 20px; }
 
   .subZone {
     flex-direction: column;
@@ -635,8 +873,8 @@
     margin-top: 18px;
   }
 
-  .subDivider { display: none; }
-  .subText    { max-width: 100%; }
+  .subDivider     { display: none; }
+  .subText        { max-width: 100%; }
 
   .ctaGroup {
     flex-direction: row;
@@ -645,27 +883,34 @@
     flex-wrap: wrap;
   }
 
-  .ctaPrimary {
-    padding: 12px 20px;
-    font-size: 13px;
-    min-height: 46px;
+  .ctaPrimary     { padding: 12px 20px; font-size: 13px; min-height: 46px; }
+  .bottomStrip    { padding-top: 18px; }
+  .scrollHint     { display: none; }
+
+  /* background mobile */
+  .bgRing3        { display: none; }
+  .bgDots         { display: none; }
+  .geoSquare      { display: none; }
+  .bgGlassCard    { display: none; }
+  .bgGlassCard2   { display: none; }
+
+  .bgOrb1 {
+    width: 320px; height: 320px;
+    top: -120px; left: -100px;
   }
 
-  .bottomStrip { padding-top: 18px; }
-
-  .scrollHint  { display: none; }
-  .bgRing3     { display: none; }
-  .bgDots      { display: none; }
-  .geoSquare   { display: none; }
+  .bgOrb2 {
+    width: 220px; height: 220px;
+    bottom: -60px; right: -40px;
+  }
 }
 
 /* ════════════════════════════════
-  SMALL MOBILE
+   SMALL MOBILE
 ════════════════════════════════ */
 @media (max-width: 480px) {
-  .inner { padding-bottom: 24px; }
-
-  .mainTitle { font-size: clamp(30px, 9vw, 40px); }
+  .inner          { padding-bottom: 24px; }
+  .mainTitle      { font-size: clamp(30px, 9vw, 40px); }
 
   .ctaGroup {
     flex-direction: column;
@@ -674,12 +919,7 @@
     width: 100%;
   }
 
-  .ctaPrimary {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .statsRow { gap: 12px; }
-
-  .statNum { font-size: 15px; }
+  .ctaPrimary     { width: 100%; justify-content: center; }
+  .statsRow       { gap: 12px; }
+  .statNum        { font-size: 15px; }
 }
