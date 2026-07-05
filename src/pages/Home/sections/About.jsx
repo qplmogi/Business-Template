@@ -1,25 +1,32 @@
 ﻿import AnimatedSection from '../../../components/AnimatedSection/AnimatedSection';
 import styles from './About.module.css';
+import m1 from '../../../assets/member/مها میرمحمدی.jpeg';
+import m2 from '../../../assets/member/عسل کلانتری.jpg';
+import m3 from '../../../assets/member/پریماه محرابی.jpeg';
+import m4 from '../../../assets/member/سالار میرمحمدی.jpg';
+import m5 from '../../../assets/member/مرتضی حاجاتی.jpg';
+import m6 from '../../../assets/member/مانیا راد.jpg';
+
 
 const stats = [
-    { value: '۱۲۰+', label: 'پروژه تحویل‌شده', percent: 92 },
+    { value: '۲۰۰+', label: 'پروژه تحویل‌شده', percent: 92 },
     { value: '۸۵+',  label: 'مشتری راضی',       percent: 85 },
     { value: '۶+',   label: 'سال تجربه',         percent: 70 },
     { value: '۱۵+',  label: 'عضو تیم',           percent: 78 },
     ];
 
 const team = [
-    { name: 'سارا م.', role: 'UI Designer',     color: '#6366f1' },
-    { name: 'علی ر.',  role: 'Dev Lead',         color: '#2563eb' },
-    { name: 'نیلو ف.', role: 'SEO Expert',       color: '#0891b2' },
-    { name: 'رضا ک.',  role: 'Brand Strategist', color: '#0f172a' },
-    { name: 'مینا ت.', role: 'Content Creator',  color: '#7c3aed' },
-    { name: 'فرهاد ن.','role': 'Marketing',      color: '#0369a1' },
+    { name: ' مها میرمحمدی ', role: 'Product Manager', image:m1 },
+    { name: 'عسل کلانتری ',  role: 'Wordpress Developer',image:m2 },
+    { name: ' پریماه محرابی', role: 'Website Developer',image:m3 },
+    { name: '  سالار میرمحمدی',  role: 'SEO Expert',image:m4},
+    { name: ' مرتضی حاجاتی', role: 'Content Creator',image:m5 },
+    { name: 'مانیا رد ' , role : 'Marketing',image:m6 },
 ];
 
 const tags = [
-'طراحی UI/UX','توسعه وب','سئو تکنیکال',
-'برندینگ','دیجیتال مارکتینگ','تولید محتوا',
+    'طراحی UI/UX','توسعه وب','سئو تکنیکال',
+    'برندینگ','دیجیتال مارکتینگ','تولید محتوا',
 ];
 
 function About() {
@@ -35,7 +42,6 @@ function About() {
 
                 <div className={styles.teamCardHeader}>
                     <span className={styles.liveTag}>
-                    <i className={styles.liveDot} />
                     تیم فعال
                     </span>
                     <span className={styles.memberCount}>۱۵+ نفر</span>
@@ -45,13 +51,10 @@ function About() {
                     {team.map((member, i) => (
                     <div key={i} className={styles.memberItem}>
                         <div
-                        className={styles.avatar}
-                        style={{
-                            background: `linear-gradient(135deg, ${member.color}cc, ${member.color})`,
-                            animationDelay: `${i * 0.08}s`,
-                        }}
-                        >
-                        {member.name[0]}
+                            className={styles.avatar}
+                            style={{ animationDelay: `${i * 0.08}s` }}
+                            >
+                            <img src={member.image} alt={member.name} />
                         </div>
                         <div className={styles.memberInfo}>
                         <span className={styles.memberName}>{member.name}</span>
@@ -82,7 +85,6 @@ function About() {
                 {/* metric card */}
                 <div className={styles.metricCard}>
                 <div className={styles.metricTop}>
-                    <span className={styles.metricIcon}>📈</span>
                     <div>
                     <p className={styles.metricValue}>۹۴٪</p>
                     <p className={styles.metricLabel}>رضایت مشتریان</p>
@@ -116,30 +118,10 @@ function About() {
 
                 <AnimatedSection variant="fadeUp" delay={0.3}>
                 <p className={styles.lead}>
-                    از ۱۳۹۸ تاکنون، بیش از ۱۲۰ برند ایرانی را در مسیر دیجیتال
+                    از ۱۴۰۲ تاکنون، بیش از ۲۰۰ برند ایرانی را در مسیر دیجیتال
                     همراهی کرده‌ایم. ترکیب خلاقیت، داده و استراتژی — این رمز
                     موفقیت ماست.
                 </p>
-                </AnimatedSection>
-
-                {/* mobile metric — فقط موبایل */}
-                <AnimatedSection variant="fadeUp" delay={0.35}>
-                <div className={styles.mobileMetric}>
-                    <div className={styles.mobileMetricItem}>
-                    <strong>۹۴٪</strong>
-                    <span>رضایت مشتریان</span>
-                    </div>
-                    <div className={styles.mobileMetricDivider} />
-                    <div className={styles.mobileMetricItem}>
-                    <strong>۶+</strong>
-                    <span>سال تجربه</span>
-                    </div>
-                    <div className={styles.mobileMetricDivider} />
-                    <div className={styles.mobileMetricItem}>
-                    <strong>۱۲۰+</strong>
-                    <span>پروژه</span>
-                    </div>
-                </div>
                 </AnimatedSection>
 
                 {/* stats */}

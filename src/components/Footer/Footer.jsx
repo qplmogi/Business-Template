@@ -1,4 +1,4 @@
-﻿import styles from './Footer.module.css';
+import styles from './Footer.module.css';
 
 const links = {
 services: [
@@ -21,7 +21,7 @@ company: [
 const socials = [
 {
     name: 'اینستاگرام',
-    href: '#',
+    href: 'https://www.instagram.com/rishehcompany.ir?igsh=MWFnazFlanYzb3Y3eQ==',
     icon: (
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
         stroke="currentColor" strokeWidth="1.8">
@@ -33,7 +33,7 @@ const socials = [
 },
 {
     name: 'لینکدین',
-    href: '#',
+    href: 'https://www.linkedin.com/in/risheh-company-974897384?utm_source=share_via&utm_content=profile&utm_medium=member_ios',
     icon: (
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
         stroke="currentColor" strokeWidth="1.8">
@@ -45,7 +45,7 @@ const socials = [
 },
 {
     name: 'توییتر',
-    href: '#',
+    href: 'https://x.com/rishehcompany?s=11',
     icon: (
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
         stroke="currentColor" strokeWidth="1.8">
@@ -55,7 +55,7 @@ const socials = [
 },
 {
     name: 'تلگرام',
-    href: '#',
+    href: 'https://t.me/RishehcompanyBot',
     icon: (
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
         stroke="currentColor" strokeWidth="1.8">
@@ -99,7 +99,7 @@ return (
         <div className={styles.brandCol}>
             <a href="#hero" className={styles.logo}>
             <span className={styles.logoDot}>●</span>
-            نوین دیجیتال
+                شرکت دیجیتال ریشه
             </a>
             <p className={styles.brandDesc}>
             آژانس دیجیتال تخصصی برای رشد کسب‌وکارهای ایرانی.
@@ -119,34 +119,37 @@ return (
             ))}
             </div>
             <div className={styles.trustBadge}>
-            <span className={styles.trustedDot} />
             <span>بیش از ۸۵ مشتری راضی</span>
             </div>
         </div>
 
-        {/* Services */}
-        <div className={styles.linkCol}>
-            <h4 className={styles.colTitle}>خدمات</h4>
-            <ul className={styles.linkList}>
-            {links.services.map((l) => (
-                <li key={l.label}>
-                <a href={l.href} className={styles.footerLink}>{l.label}</a>
-                </li>
-            ))}
-            </ul>
+        
+        {/* Links — دو ستون */}
+        <div className={styles.linksGrid}>
+            <div className={styles.linkCol}>
+                <h4 className={styles.colTitle}>خدمات</h4>
+                <ul className={styles.linkList}>
+                {links.services.map((l) => (
+                    <li key={l.label}>
+                    <a href={l.href} className={styles.footerLink}>{l.label}</a>
+                    </li>
+                ))}
+                </ul>
+            </div>
+
+            <div className={styles.linkCol}>
+                <h4 className={styles.colTitle}>شرکت</h4>
+                <ul className={styles.linkList}>
+                {links.company.map((l) => (
+                    <li key={l.label}>
+                    <a href={l.href} className={styles.footerLink}>{l.label}</a>
+                    </li>
+                ))}
+                </ul>
+            </div>
         </div>
 
-        {/* Company */}
-        <div className={styles.linkCol}>
-            <h4 className={styles.colTitle}>شرکت</h4>
-            <ul className={styles.linkList}>
-            {links.company.map((l) => (
-                <li key={l.label}>
-                <a href={l.href} className={styles.footerLink}>{l.label}</a>
-                </li>
-            ))}
-            </ul>
-        </div>
+
 
         {/* Newsletter */}
         <div className={styles.newsletterCol}>
@@ -168,7 +171,7 @@ return (
                 </svg>
             </button>
             </div>
-            <p className={styles.newsletterNote}>🔒 اطلاعات شما نزد ما محفوظ است.</p>
+            <p className={styles.newsletterNote}> اطلاعات شما نزد ما محفوظ است.</p>
         </div>
 
         </div>
@@ -178,7 +181,7 @@ return (
     <div className={styles.bottom}>
         <div className={`container ${styles.bottomInner}`}>
         <p className={styles.copyright}>
-            © {year} نوین دیجیتال — تمام حقوق محفوظ است.
+            © {year}  ریشه — تمام حقوق محفوظ است.
         </p>
         <div className={styles.bottomLinks}>
             <a href="#">حریم خصوصی</a>

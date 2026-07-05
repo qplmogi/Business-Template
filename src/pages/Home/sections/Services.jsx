@@ -1,9 +1,17 @@
 ﻿import AnimatedSection from '../../../components/AnimatedSection/AnimatedSection';
 import styles from './Services.module.css';
+import {
+  LuPalette,
+  LuCode,
+  LuSearch,
+  LuMegaphone,
+  LuBadgeCheck,
+  LuPenTool,
+} from "react-icons/lu";
 
 const services = [
   {
-    icon: '🎨',
+    icon: <LuPalette />,
     tag: 'Design',
     title: 'طراحی UI/UX',
     text: 'طراحی رابط کاربری مدرن و تجربه کاربری روان که مخاطب را به مشتری تبدیل می‌کند.',
@@ -12,7 +20,7 @@ const services = [
     light: '#eef2ff',
   },
   {
-    icon: '💻',
+    icon: <LuCode />,
     tag: 'Development',
     title: 'توسعه وب',
     text: 'ساخت وب‌سایت‌های سریع، امن و مقیاس‌پذیر با جدیدترین تکنولوژی‌های روز.',
@@ -21,7 +29,7 @@ const services = [
     light: '#eff6ff',
   },
   {
-    icon: '📈',
+    icon: <LuSearch />,
     tag: 'SEO',
     title: 'سئو تکنیکال',
     text: 'بهینه‌سازی موتور جستجو با رویکرد داده‌محور برای رشد پایدار ترافیک آلی.',
@@ -30,7 +38,7 @@ const services = [
     light: '#ecfeff',
   },
   {
-    icon: '📣',
+    icon: <LuMegaphone />,
     tag: 'Marketing',
     title: 'دیجیتال مارکتینگ',
     text: 'استراتژی بازاریابی یکپارچه دیجیتال برای رشد برند و افزایش فروش.',
@@ -39,7 +47,7 @@ const services = [
     light: '#f8fafc',
   },
   {
-    icon: '✦',
+    icon: <LuBadgeCheck />,
     tag: 'Branding',
     title: 'برندینگ',
     text: 'خلق هویت بصری منسجم و استراتژی برند که در ذهن مخاطب ماندگار می‌شود.',
@@ -48,7 +56,7 @@ const services = [
     light: '#f5f3ff',
   },
   {
-    icon: '✍️',
+    icon:<LuPenTool /> ,
     tag: 'Content',
     title: 'تولید محتوا',
     text: 'محتوای هدفمند و باکیفیت که اعتماد مخاطب را جلب و او را به اقدام ترغیب می‌کند.',
@@ -90,12 +98,14 @@ function Services() {
                 style={{ '--card-accent': s.color, '--card-light': s.light }}
               >
                 <div className={styles.cardTop}>
-                  <div
-                    className={styles.iconBox}
-                    style={{ background: s.light }}
-                  >
-                    <span className={styles.icon}>{s.icon}</span>
-                  </div>
+                <div
+                  className={styles.iconBox}
+                  style={{ background: s.light }}
+                >
+                  <span className={styles.icon}>
+                    {s.icon}
+                  </span>
+                </div>
                   <span
                     className={styles.cardTag}
                     style={{ color: s.color, background: `${s.color}18` }}

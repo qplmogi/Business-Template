@@ -1,5 +1,8 @@
 ﻿import { useState, useEffect, useCallback, useRef } from 'react';
 import styles from './Navbar.module.css';
+import logo from "../../assets/RishehLogo/mono1.pdf"
+import gsap from 'gsap';
+
 
 const NAV_ITEMS = [
   { label: 'خانه',        href: '#hero' },
@@ -64,7 +67,7 @@ function Navbar() {
     return () => {
       document.body.style.overflow    = '';
       document.body.style.touchAction = '';
-    };
+    };  
   }, [menuOpen]);
 
   const closeMenu = useCallback(() => setMenuOpen(false), []);
@@ -91,11 +94,13 @@ function Navbar() {
             className={styles.logo}
             onClick={() => handleNavClick('#hero')}
           >
-            <span className={styles.logoMark}>
-              <span className={styles.logoMarkInner} />
-            </span>
+            <img
+              src={logo}
+              alt="ریشه"
+              className={styles.logoImage}
+            />
             <span className={styles.logoText}>
-              نوین<span className={styles.logoAccent}>دیجیتال</span>
+              شرکت دیجیتال<span className={styles.logoAccent}>ریشه</span>
             </span>
           </a>
 
@@ -119,7 +124,7 @@ function Navbar() {
 
           {/* ── Desktop Actions ── */}
           <div className={styles.actions}>
-            <a href="tel:09116769577" className={styles.phoneLink}>
+            <a href="tel:09981183302" className={styles.phoneLink}>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" strokeWidth="2">
                 <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.22 1.18 2 2 0 012.2 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z" />
@@ -247,12 +252,12 @@ function Navbar() {
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
           </a>
-          <a href="tel:02188445566" className={styles.menuPhone}>
+          <a href="tel:09981183302" className={styles.menuPhone}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" strokeWidth="2">
               <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.22 1.18 2 2 0 012.2 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z" />
             </svg>
-            ۰۲۱-۸۸۴۴۵۵۶۶
+            ۰۹۹۸۱۱۸۳۳۰۲
           </a>
         </div>
       </nav>

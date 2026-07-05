@@ -44,7 +44,7 @@
 }
 
 /* ════════════════════════════════
-   LOGO
+  LOGO
 ════════════════════════════════ */
 .logo {
   display: flex;
@@ -55,7 +55,11 @@
   min-height: 44px;
   padding: 4px 0;
 }
-
+.logoImage {
+  height: 37px;
+  width: auto;
+  margin-left: 3px;
+}
 .logoMark {
   width: 32px;
   height: 32px;
@@ -95,7 +99,7 @@
 }
 
 /* ════════════════════════════════
-   DESKTOP NAV
+  DESKTOP NAV
 ════════════════════════════════ */
 .nav {
   display: flex;
@@ -139,7 +143,7 @@
 .navLinkActive .navUnderline { transform: scaleX(1); }
 
 /* ════════════════════════════════
-   DESKTOP ACTIONS
+  DESKTOP ACTIONS
 ════════════════════════════════ */
 .actions {
   display: flex;

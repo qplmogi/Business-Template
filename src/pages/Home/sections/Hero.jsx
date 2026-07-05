@@ -1,112 +1,81 @@
 ﻿import styles from './Hero.module.css';
+import { Link } from 'react-router-dom';
+import logoBg from '../../../assets/RishehLogo/mono2.pdf'
 
-const stats = [
-    { value: '۱۲۰+', label: 'پروژه موفق' },
-    { value: '۹۴٪',  label: 'رضایت مشتری' },
-    { value: '۶+',   label: 'سال تجربه' },
+
+const clients = [
+    'برند الف',
+    'استارتاپ ب',
+    'گروه ج',
+    'شرکت د',
+    'پلتفرم ه',
 ];
-
-const bars = [45, 72, 58, 88, 65, 94, 78];
 
 function Hero() {
     return (
         <section className={styles.hero} id="hero">
-
-        {/* ── پس‌زمینه ── */}
-        <div className={styles.bg} aria-hidden="true">
-            <div className={styles.bgGradient} />
-            <div className={styles.bgStripes} />
-            <div className={styles.bgOrb1} />
-            <div className={styles.bgOrb2} />
-            <div className={styles.bgBlob1} />
-            <div className={styles.bgBlob2} />
-            <div className={styles.bgRing1} />
-            <div className={styles.bgRing2} />
-            <div className={styles.bgRing3} />
-            <div className={styles.bgGlassCard} />
-            <div className={styles.bgGlassCard2} />
-            <div className={styles.bgLine} />
-            <div className={styles.bgDots} />
-            <div className={styles.geoCross} />
-            <div className={styles.geoSquare} />
-        </div>
-
         <div className={`container ${styles.inner}`}>
 
-            {/* ── نوار بالا ── */}
-            <div className={styles.topStrip}>
-            <div className={styles.brandMark}>
-                <span className={styles.brandDot} />
-                <span className={styles.brandName}>نوین دیجیتال</span>
-            </div>
-            <span className={styles.topMeta}>DIGITAL AGENCY — ۱۳۹۸</span>
+            {/* ── badge ── */}
+            <div className={styles.badge}>
+            <span>شریک رشد کسب‌وکارهای ایرانی از 2025</span>
             </div>
 
-            {/* ── لیبل عمودی ── */}
-            <div className={styles.floatLabel} aria-hidden="true">
-            <div className={styles.flLine} />
-            <span className={styles.flTag}>DESIGN STUDIO</span>
-            </div>
-
-            {/* ── تیتر اصلی ── */}
-            <div className={styles.headlineZone}>
-
-            <div className={styles.eyebrowTag}>
-                <span className={styles.eyebrowDash} />
-                <span className={styles.eyebrowText}>تجربه دیجیتال نسل بعد</span>
-                <span className={styles.eyebrowDash} />
-            </div>
-
-            <h1 className={styles.mainTitle}>
-                <span className={styles.titleLine1}>ما ایده را</span>
-                <span className={styles.titleLine2}>
-                به واقعیت
-                <span className={styles.inlineBadge}>
-                    <span className={styles.inlineBadgeText}>+۱۲۰ پروژه</span>
-                </span>
-                </span>
-                <span className={styles.titleLine3}>تبدیل می‌کنیم</span>
+            {/* ── headline ── */}
+            <h1 className={styles.headline}>
+            از ریشه رشد می‌کنید،
+            <br />
+            <span className={styles.headlineAccent}>ما مطمئن می‌شویم.</span>
             </h1>
 
-            <div className={styles.subZone}>
-                <p className={styles.subText}>
-                طراحی سایت، سئو، برندینگ و دیجیتال مارکتینگ —
-                با <em className={styles.subEm}>استراتژی داده‌محور</em> که
-                نتایج واقعی می‌سازد.
-                </p>
-                <div className={styles.subDivider} />
-                <div className={styles.ctaGroup}>
-                <a href="#contact" className={styles.ctaPrimary}>
-                    شروع مشاوره رایگان
-                    <span className={styles.ctaArrow}>←</span>
-                </a>
-                <a href="#portfolio" className={styles.ctaSecondary}>
-                    نمونه کارها را ببین
-                </a>
-                </div>
-            </div>
+            {/* ── subtext ── */}
+            <p className={styles.subtext}>
+            استراتژی دیجیتال، سیستم‌سازی بازاریابی و اجرای دقیق —
+            برای کسب‌وکارهایی که می‌خواهند پایدار و هوشمند رشد کنند.
+            </p>
+
+            {/* ── CTA ── */}
+            <div className={styles.ctaGroup}>
+            <a href="#contact" className={styles.ctaPrimary}>
+                شروع همکاری
+            </a>
+            <a href="#portfolio" className={styles.ctaSecondary}>
+                مشاهده نمونه کارها
+            </a>
             </div>
 
-            {/* ── نوار پایین ── */}
-            <div className={styles.bottomStrip}>
-            <div className={styles.statsRow}>
-                {stats.map((s, i) => (
-                <>
-                    {i > 0 && <div key={`sep-${i}`} className={styles.statSep} />}
-                    <div key={s.label} className={styles.statItem}>
-                    <span className={styles.statNum}>{s.value}</span>
-                    <span className={styles.statLabel}>{s.label}</span>
-                    </div>
-                </>
-                ))}
+            {/* ── social proof ── */}
+            <div className={styles.proof}>
+            <div className={styles.proofStats}>
+                <div className={styles.stat}>
+                <span className={styles.statNum}>۲۰۰+</span>
+                <span className={styles.statLabel}>پروژه اجرا شده</span>
+                </div>
+                <div className={styles.statDivider} />
+                <div className={styles.stat}>
+                <span className={styles.statNum}>۶ سال</span>
+                <span className={styles.statLabel}>تجربه میدانی</span>
+                </div>
+                <div className={styles.statDivider} />
+                <div className={styles.stat}>
+                <span className={styles.statNum}>۹۴٪</span>
+                <span className={styles.statLabel}>رضایت مشتریان</span>
+                </div>
             </div>
-            <div className={styles.scrollHint} aria-hidden="true">
-                <div className={styles.scrollLine} />
-                <span>SCROLL</span>
-            </div>
+
             </div>
 
         </div>
+
+        {/* ── watermark لوگو در پس‌زمینه ── */}
+        <div className={styles.bgWatermark} aria-hidden="true">
+            <img
+            src={logoBg}
+            alt=""
+            className={styles.watermarkImg}
+            />
+        </div>
+
         </section>
     );
 }

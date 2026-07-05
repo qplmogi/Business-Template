@@ -1,17 +1,19 @@
-﻿import { useState } from 'react';
+import { useState } from 'react';
 import AnimatedSection from '../../../components/AnimatedSection/AnimatedSection';
 import styles from './Values.module.css';
+import {
+  LuClock3,
+  LuSparkles,
+  LuUsers,
+  LuZap,
+  LuShieldCheck,
+  LuTrendingUp,
+} from "react-icons/lu";
 
 const values = [
   {
     id: '01',
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-        stroke="currentColor" strokeWidth="1.8">
-        <circle cx="12" cy="12" r="10" />
-        <polyline points="12 6 12 12 16 14" />
-      </svg>
-    ),
+    icon: <LuClock3/>,
     title: 'نتیجه‌محوری',
     text: 'هر پروژه را با هدف رسیدن به نتایج واقعی و قابل اندازه‌گیری دنبال می‌کنیم.',
     color: '#2563eb',
@@ -20,12 +22,7 @@ const values = [
   },
   {
     id: '02',
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-        stroke="currentColor" strokeWidth="1.8">
-        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-      </svg>
-    ),
+    icon: <LuShieldCheck />,
     title: 'خلاقیت',
     text: 'ایده‌های تازه و رویکردهای نوآورانه را در قلب هر راه‌حل قرار می‌دهیم.',
     color: '#7c3aed',
@@ -34,15 +31,7 @@ const values = [
   },
   {
     id: '03',
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-        stroke="currentColor" strokeWidth="1.8">
-        <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
-        <circle cx="9" cy="7" r="4" />
-        <path d="M23 21v-2a4 4 0 00-3-3.87" />
-        <path d="M16 3.13a4 4 0 010 7.75" />
-      </svg>
-    ),
+    icon: <LuSparkles/>,
     title: 'شفافیت',
     text: 'در تمام مراحل پروژه با مشتریان صادق و شفاف هستیم.',
     color: '#0891b2',
@@ -51,12 +40,7 @@ const values = [
   },
   {
     id: '04',
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-        stroke="currentColor" strokeWidth="1.8">
-        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
-      </svg>
-    ),
+    icon: <LuTrendingUp/>,
     title: 'چابکی',
     text: 'با سرعت و انعطاف‌پذیری بالا به نیازهای در حال تغییر پاسخ می‌دهیم.',
     color: '#f59e0b',
@@ -65,12 +49,7 @@ const values = [
   },
   {
     id: '05',
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-        stroke="currentColor" strokeWidth="1.8">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-      </svg>
-    ),
+    icon: <LuUsers/>,
     title: 'کیفیت',
     text: 'هیچ‌وقت با کیفیت کمتر از بهترین کنار نمی‌آییم.',
     color: '#16a34a',
@@ -79,13 +58,7 @@ const values = [
   },
   {
     id: '06',
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-        stroke="currentColor" strokeWidth="1.8">
-        <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
-        <polyline points="17 6 23 6 23 12" />
-      </svg>
-    ),
+    icon: <LuZap/>,
     title: 'رشد مستمر',
     text: 'یادگیری و بهبود مداوم بخشی از DNA تیم ماست.',
     color: '#0369a1',

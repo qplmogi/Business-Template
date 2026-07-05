@@ -8,12 +8,12 @@ import Contact   from './sections/Contact';
 function Home() {
     return (
         <div>
-        <Hero />
-        <About />
-        <Values />
-        <Services />
-        <Portfolio />
-        <Contact />
+            <Hero />
+            <About />
+            <Values />
+            <Services />
+            <Portfolio />
+            <Contact />
         </div>
     );
 }

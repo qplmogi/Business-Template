@@ -170,7 +170,7 @@ function Contact() {
                         onFocus={() => setFocused('phone')}
                         onBlur={() => setFocused('')}
                         className={styles.input}
-                        placeholder="۰۹۱۲..."
+                        placeholder="۰۹..."
                         dir="ltr"
                       />
                     </div>

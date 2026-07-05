@@ -97,7 +97,7 @@
 
 .mainInner {
   display: grid;
-  grid-template-columns: 1.8fr 1fr 1fr 1.4fr;
+  grid-template-columns: 1.6fr 1.4fr 1.4fr;
   gap: clamp(24px, 4vw, 48px);
   align-items: start;
 }
@@ -392,7 +392,7 @@
 }
 
 /* ════════════════════════════════
-  MOBILE — 2026 style
+  MOBILE
 ════════════════════════════════ */
 @media (max-width: 768px) {
 
@@ -440,37 +440,46 @@
   .brandDesc { display: none; }
 
   /* socials + trust در یک ردیف */
-  .socials {
-    gap: 6px;
-  }
+.socials {
+  gap: 6px;
+  justify-content: center;
+}
 
-  .socialBtn {
-    width: 36px; height: 36px;
-    border-radius: 9px;
-  }
+.socialBtn {
+  width: 36px; height: 36px;
+  border-radius: 9px;
+}
 
-  /* links — ۲ ستون bento */
-  .linksGrid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-  }
+.linksGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(16px, 2vw, 28px);
+  align-items: start;
+}
 
-  .linkCol { gap: 10px; }
+.linkCol {
+  min-width: 0;
+}
+
+.linkList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+}
 
   .colTitle {
     font-size: 0.72rem;
     margin-bottom: 2px;
   }
 
-  .linkList { gap: 6px; }
+
 
   .footerLink {
     font-size: 0.8rem;
     min-height: 32px;
   }
 
-  /* newsletter فشرده */
   .newsletterCol { gap: 10px; }
 
   .newsletterDesc { display: none; }

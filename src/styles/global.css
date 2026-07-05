@@ -1,5 +1,10 @@
 ﻿@import './variables.css';
-
+@font-face {
+    font-family: 'Ravi';
+    src: url("../assets/fonts/Ravi-Regular.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
 *,
 *::before,
 *::after {
@@ -23,59 +28,59 @@ html { scroll-behavior: smooth; }
 }
 
 body {
-font-family: var(--font-family);
-background-color: var(--color-bg);
-color: var(--color-text);
-line-height: 1.7;
--webkit-font-smoothing: antialiased;
--moz-osx-font-smoothing: grayscale;
-text-rendering: optimizeLegibility;
-overflow-x: hidden;
+    font-family: var(--font-family);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
-line-height: 1.25;
-font-weight: 700;
-color: var(--color-secondary);
-text-wrap: balance;
+    line-height: 1.25;
+    font-weight: 700;
+    color: var(--color-secondary);
+    text-wrap: balance;
 }
 
 p {
-line-height: 1.75;
-text-wrap: pretty;
+    line-height: 1.75;
+    text-wrap: pretty;
 }
 
 a {
-text-decoration: none;
-color: inherit;
+    text-decoration: none;
+    color: inherit;
 }
 
 ul { list-style: none; }
 
 img, svg {
-max-width: 100%;
-display: block;
-height: auto;
+    max-width: 100%;
+    display: block;
+    height: auto;
 }
 
 button {
-cursor: pointer;
-font-family: var(--font-family);
-border: none;
-outline: none;
-background: none;
+    cursor: pointer;
+    font-family: var(--font-family);
+    border: none;
+    outline: none;
+    background: none;
 }
 
 input, textarea, select {
-font-family: var(--font-family);
-font-size: max(16px, 1rem);
+    font-family: var(--font-family);
+    font-size: max(16px, 1rem);
 }
 
 .container {
-width: 100%;
-max-width: var(--container-max);
-margin: 0 auto;
-padding: 0 var(--container-px);
+    width: 100%;
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--container-px);
 }
 
 * { -webkit-tap-highlight-color: transparent; }
@@ -84,18 +89,17 @@ button, a, [role="button"] {
 min-height: 44px;
 min-width: 44px;
 }
-
 :focus-visible {
-outline: 2px solid var(--color-primary);
-outline-offset: 3px;
-border-radius: 4px;
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+    border-radius: 4px;
 }
 
 :focus:not(:focus-visible) { outline: none; }
 
 ::selection {
-background: rgba(37, 99, 235, 0.15);
-color: var(--color-secondary);
+    background: #215C46 ;
+    color: var(--color-secondary);
 }
 
 @media (min-width: 768px) and (hover: hover) {
