@@ -1,8 +1,6 @@
-﻿import { useState, useEffect, useCallback, useRef } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import styles from './Navbar.module.css';
-import logo from "../../assets/RishehLogo/mono1.pdf"
-import gsap from 'gsap';
-
+import logo from "../../assets/RishehLogo/mono1.pdf";
 
 const NAV_ITEMS = [
   { label: 'خانه',        href: '#hero' },

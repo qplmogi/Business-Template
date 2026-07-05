@@ -1,4 +1,4 @@
-﻿import AnimatedSection from '../../../components/AnimatedSection/AnimatedSection';
+import AnimatedSection from '../../../components/AnimatedSection/AnimatedSection';
 import styles from './Services.module.css';
 import {
   LuPalette,

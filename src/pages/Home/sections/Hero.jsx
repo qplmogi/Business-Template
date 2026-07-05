@@ -1,15 +1,5 @@
-﻿import styles from './Hero.module.css';
-import { Link } from 'react-router-dom';
+import styles from './Hero.module.css';
 import logoBg from '../../../assets/RishehLogo/mono2.pdf'
-
-
-const clients = [
-    'برند الف',
-    'استارتاپ ب',
-    'گروه ج',
-    'شرکت د',
-    'پلتفرم ه',
-];
 
 function Hero() {
     return (

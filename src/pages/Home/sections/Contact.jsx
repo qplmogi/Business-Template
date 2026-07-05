@@ -1,4 +1,4 @@
-﻿import { useState } from 'react';
+import { useState } from 'react';
 import AnimatedSection from '../../../components/AnimatedSection/AnimatedSection';
 import styles from './Contact.module.css';
 
@@ -12,13 +12,13 @@ const contactInfo = [
   {
     icon: '📞',
     label: 'تلفن',
-    value: '۰۹۱۱۶۷۶۹۵۷۷',
+    value: '۰۹۰۲۸۸۶۶۸۹۸-۰۹۹۸۱۱۸۳۳۰۲',
     sub: 'شنبه تا چهارشنبه، ۹ تا ۱۸',
   },
   {
     icon: '✉️',
     label: 'ایمیل',
-    value: 'hello@gmail.com',
+    value: 'info@rishehcompany.ir',
     sub: 'پاسخ در کمتر از ۲۴ ساعت',
   },
 ];

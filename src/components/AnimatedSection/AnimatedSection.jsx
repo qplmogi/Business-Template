@@ -1,4 +1,4 @@
-﻿import { useRef } from 'react';
+import { useRef } from 'react';
 import useScrollAnimation from '../../hooks/useScrollAnimation';
 import styles from './AnimatedSection.css';
 

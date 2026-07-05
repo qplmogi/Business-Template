@@ -1,4 +1,4 @@
-﻿import Hero      from './sections/Hero';
+import Hero      from './sections/Hero';
 import About     from './sections/About';
 import Values    from './sections/Values';
 import Services  from './sections/Services';

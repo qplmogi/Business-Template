@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import AnimatedSection from '../../../components/AnimatedSection/AnimatedSection';
 import styles from './Values.module.css';
 import {

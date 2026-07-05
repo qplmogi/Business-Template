@@ -110,6 +110,8 @@ return (
                 <a
                     key={s.name}
                     href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className={styles.socialBtn}
                     aria-label={s.name}
                     title={s.name}

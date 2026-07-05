@@ -1,4 +1,4 @@
-﻿import AnimatedSection from '../../../components/AnimatedSection/AnimatedSection';
+import AnimatedSection from '../../../components/AnimatedSection/AnimatedSection';
 import styles from './About.module.css';
 import m1 from '../../../assets/member/مها میرمحمدی.jpeg';
 import m2 from '../../../assets/member/عسل کلانتری.jpg';
@@ -19,9 +19,9 @@ const team = [
     { name: ' مها میرمحمدی ', role: 'Product Manager', image:m1 },
     { name: 'عسل کلانتری ',  role: 'Wordpress Developer',image:m2 },
     { name: ' پریماه محرابی', role: 'Website Developer',image:m3 },
-    { name: '  سالار میرمحمدی',  role: 'SEO Expert',image:m4},
-    { name: ' مرتضی حاجاتی', role: 'Content Creator',image:m5 },
-    { name: 'مانیا رد ' , role : 'Marketing',image:m6 },
+    { name: '  سالار میرمحمدی',  role: 'Backend Developer',image:m4},
+    { name: ' مرتضی حاجاتی', role: 'Manager',image:m5 },
+    { name: 'مانیا رد ' , role : 'Content   Creator',image:m6 },
 ];
 
 const tags = [
