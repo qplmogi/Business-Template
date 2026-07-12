@@ -18,10 +18,10 @@ const stats = [
 const team = [
     { name: ' مها میرمحمدی ', role: 'Product Manager', image:m1 },
     { name: 'عسل کلانتری ',  role: 'Wordpress Developer',image:m2 },
-    { name: ' پریماه محرابی', role: 'Website Developer',image:m3 },
-    { name: '  سالار میرمحمدی',  role: 'Backend Developer',image:m4},
+    { name: ' پریماه محرابی', role: 'Front-End Developer',image:m3 },
+    { name: '  سالار میرمحمدی',  role: 'Back-End Developer',image:m4},
     { name: ' مرتضی حاجاتی', role: 'Manager',image:m5 },
-    { name: 'مانیا رد ' , role : 'Content   Creator',image:m6 },
+    { name: 'مانیا رد ' , role : 'Content Creator',image:m6 },
 ];
 
 const tags = [
@@ -142,6 +142,27 @@ function About() {
                         </div>
                     </div>
                     ))}
+                </div>
+                </AnimatedSection>
+
+
+                <AnimatedSection variant="fadeUp" delay={0.5}>
+
+                <div className={styles.mobileTeam}>
+                <div className={styles.mobileTeamHeader}>
+                    <h3>اعضای تیم</h3>
+                    <span>۱۵+ متخصص</span>
+                </div>
+                <div className={styles.mobileTeamSlider}>
+                    {team.map((member) => (
+                    <div key={member.name} className={styles.mobileMemberCard}>
+                        <img src={member.image} alt={member.name} />
+                        <h4>{member.name}</h4>
+                        <p>{member.role}</p>
+                    </div>
+                    ))}
+                    
+                </div>
                 </div>
                 </AnimatedSection>
 

@@ -50,13 +50,37 @@ function Contact() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
+
     e.preventDefault();
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-      setSubmitted(true);
-    }, 1500);
+    try {
+      const res = await fetch("https://rishehcompany.ir/contact.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams({
+          name: form.name || '',
+          email: form.email || '',
+          phone: form.phone || '',
+          service: form.service || '',
+          message: form.message || '',
+        }),
+      });
+      const data = await res.json();
+      if (data.ok) {
+        setSubmitted(true);
+        setForm(initialForm);
+      }
+    } catch (err) {
+  
+      console.log("error:", err);
+  
+      alert("ارسال نشد 😑");
+    }
+    setLoading(false);
+  
   };
 
   const isValid = form.name && form.email && form.message;

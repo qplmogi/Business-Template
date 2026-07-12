@@ -1,24 +1,15 @@
 ﻿:root {
     --color-primary:      #215C46;
-
     --color-primary-dark: #174736;
-
     --color-secondary:    #1F2933;
-
     --color-accent:       #8FD6B3;
-
     --color-bg:           #F8FAF7;
-
     --color-text:         #1F2933;
-
     --color-text-light:   #5C6770;
-
     --color-white:        #FFFFFF;
-
     --color-border:       #DCE6DF;
-
     --font-family: 'Ravi', sans-serif;
-
+    
     --text-xs:   0.72rem;
     --text-sm:   0.85rem;
     --text-base: 1rem;

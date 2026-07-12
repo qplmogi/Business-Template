@@ -16,7 +16,7 @@ function useScrollAnimation() {
         if (!el) return;
 
         const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight * 0.92) {
+        if (rect.top < window.innerHeight * 0.85) {
         setIsInView(true);
         return;
         }
@@ -28,7 +28,7 @@ function useScrollAnimation() {
             observer.unobserve(el);
             }
         },
-        { threshold: 0, rootMargin: '0px 0px -48px 0px' }
+        { threshold: 0, rootMargin: '-10%' }
         );
 
         observer.observe(el);

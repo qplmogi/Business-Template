@@ -456,60 +456,269 @@ ABOUT
     color: var(--color-primary);
     background: rgba(37,99,235,0.05);
 }
+.mobileTeam {
+
+    display: none;
+
+}
+
+.mobileTeamHeader {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 18px;
+
+}
+
+.mobileTeamSlider {
+
+    display: flex;
+
+    gap: 16px;
+
+    overflow-x: auto;
+
+    scroll-snap-type: x mandatory;
+
+    scroll-padding-inline: 20px;
+
+    -webkit-overflow-scrolling: touch;
+
+    scrollbar-width: none;
+
+    padding-bottom: 8px;
+
+}
+
+.mobileTeamSlider::-webkit-scrollbar {
+
+    display: none;
+
+}
+
+.mobileMemberCard {
+
+    flex: 0 0 82%;
+
+    scroll-snap-align: center;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+    background: var(--color-white);
+
+    border: 1px solid var(--color-border);
+
+    border-radius: 18px;
+
+    padding: 22px 18px;
+
+    box-shadow: var(--shadow-sm);
+
+}
+
+.mobileMemberCard img {
+
+    width: 72px;
+
+    height: 72px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    margin-bottom: 14px;
+
+}
+
+.moreCard {
+
+    flex: 0 0 82%;
+
+    scroll-snap-align: center;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 2px dashed var(--color-border);
+
+    border-radius: 18px;
+
+    color: var(--color-primary);
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+}
 
 /* ════════════════════════════════
     TABLET
 ════════════════════════════════ */
+
+
 @media (max-width: 960px) {
+
     .wrapper {
-    grid-template-columns: 1fr;
-    gap: 28px;
+
+        grid-template-columns: 1fr;
+
+        gap: 28px;
+
     }
 
-    .visual       { display: none; }
-    .mobileMetric { display: flex; }
+    .visual {
 
-    .content   { gap: 16px; }
-    .heading   { text-align: center; }
-    .eyebrow   { justify-content: center; }
-    .lead      { text-align: center; max-width: 100%; }
-    .tags      { justify-content: center; }
+        display: none;
+
+    }
+
+    .mobileMetric {
+
+        display: flex;
+
+    }
+
+    .mobileTeam {
+
+        display: block;
+
+    }
+
+    .content {
+
+        gap: 16px;
+
+    }
+
+    .heading {
+
+        text-align: center;
+
+    }
+
+    .eyebrow {
+
+        justify-content: center;
+
+    }
+
+    .lead {
+
+        text-align: center;
+
+        max-width: 100%;
+
+    }
+
+    .tags {
+
+        justify-content: center;
+
+    }
+
 }
-
 /* ════════════════════════════════
     MOBILE
 ════════════════════════════════ */
+/* ════════════════════════════════
+   MOBILE
+════════════════════════════════ */
+
 @media (max-width: 600px) {
-    .statsGrid {
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
+
+    .mobileTeamSlider {
+        gap: 14px;
+        scroll-padding-inline: 16px;
     }
 
-    .tags { gap: 6px; }
+    .mobileMemberCard,
+    .moreCard {
+        flex-basis: 86%;
+        padding: 20px 16px;
+    }
+
+    .mobileMemberCard img {
+        width: 64px;
+        height: 64px;
+    }
+
+    .statsGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .tags {
+        gap: 6px;
+    }
 
     .tag {
-    font-size: 0.7rem;
-    padding: 5px 10px;
-    min-height: 30px;
+        font-size: 0.7rem;
+        padding: 5px 10px;
+        min-height: 30px;
     }
 }
+
 
 /* ════════════════════════════════
     SMALL MOBILE
 ════════════════════════════════ */
+/* ════════════════════════════════
+   SMALL MOBILE
+════════════════════════════════ */
+
 @media (max-width: 480px) {
-    .statsGrid { gap: 8px; }
 
-    .statItem { gap: 4px; }
+    .statsGrid {
+        gap: 8px;
+    }
 
-    .mobileMetricItem strong { font-size: 1rem; }
-    .mobileMetricItem span   { font-size: 0.6rem; }
+    .statItem {
+        gap: 4px;
+    }
 
-    .tags { gap: 5px; }
+    .mobileMetricItem strong {
+        font-size: 1rem;
+    }
+
+    .mobileMetricItem span {
+        font-size: 0.6rem;
+    }
+
+    .mobileTeamSlider {
+        gap: 12px;
+    }
+
+    .mobileMemberCard,
+    .moreCard {
+        flex-basis: 90%;
+        padding: 18px 14px;
+    }
+
+    .mobileMemberCard img {
+        width: 58px;
+        height: 58px;
+    }
+
+    .tags {
+        gap: 5px;
+    }
 
     .tag {
-    font-size: 0.68rem;
-    padding: 4px 9px;
-    min-height: 28px;
+        font-size: 0.68rem;
+        padding: 4px 9px;
+        min-height: 28px;
     }
 }

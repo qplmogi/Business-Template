@@ -21,6 +21,8 @@ html {
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
     scroll-padding-top: calc(var(--navbar-h) + 12px);
+    scroll-behavior: smooth;
+
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -135,4 +137,5 @@ scroll-margin-top: calc(var(--navbar-h) + 12px);
 section {
 position: relative;
 isolation: isolate;
+
 }

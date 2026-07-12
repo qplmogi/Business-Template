@@ -64,7 +64,7 @@ function Portfolio() {
       <div className="container">
 
         {/* HEADER */}
-        <AnimatedSection variant="fadeUp" delay={0.1}>
+        <AnimatedSection variant="fadeRight" delay={0.1}>
           <div className={styles.header}>
             <div className={styles.eyebrow}>
               <span className={styles.eyebrowLine} />
@@ -84,7 +84,7 @@ function Portfolio() {
 
 
         {/* SWIPER WITH IMAGE */}
-        <AnimatedSection variant="fadeUp" delay={0.2}>
+        <AnimatedSection variant="fadeLeft" delay={0.2}>
           <Swiper
             modules={[Autoplay, Pagination]}
             spaceBetween={18}
@@ -145,7 +145,7 @@ function Portfolio() {
           </Swiper>
         </AnimatedSection>
 
-        <AnimatedSection variant="fadeUp" delay={0.25}>
+        <AnimatedSection variant="fadeLeft" delay={0.25}>
 
             <div className={styles.strip}>
 

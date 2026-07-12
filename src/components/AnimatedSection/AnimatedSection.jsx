@@ -1,12 +1,12 @@
 import { useRef } from 'react';
 import useScrollAnimation from '../../hooks/useScrollAnimation';
-import styles from './AnimatedSection.css';
+import styles from './AnimatedSection.module.css';
 
 function AnimatedSection({
     children,
     variant = 'fadeUp',
     delay = 0,
-    duration = 0.55,
+    duration = 0.7,
     className = '',
     }) {
     const { ref, isInView } = useScrollAnimation();
