@@ -465,7 +465,11 @@
   color: var(--color-primary);
   transform: translateX(-4px);
 }
-
+.navList {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
 /* ── Menu Foot ── */
 .menuFoot {
   padding: 16px var(--container-px);

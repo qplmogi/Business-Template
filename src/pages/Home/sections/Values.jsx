@@ -1,18 +1,18 @@
 import AnimatedSection from '../../../components/AnimatedSection/AnimatedSection';
 import styles from './Values.module.css';
 import {
-  LuClock3,
-  LuSparkles,
-  LuUsers,
-  LuZap,
-  LuShieldCheck,
-  LuTrendingUp,
+  LuTarget,        
+  LuSparkles,      
+  LuEye,           
+  LuZap,           
+  LuShieldCheck,   
+  LuTrendingUp,    
 } from "react-icons/lu";
 
 const values = [
   {
     id: '01',
-    icon: <LuClock3/>,
+    icon: <LuTarget/>,
     title: 'نتیجه‌محوری',
     text: 'هر پروژه را با هدف رسیدن به نتایج واقعی و قابل اندازه‌گیری دنبال می‌کنیم.',
     color: '#2563eb',
@@ -21,7 +21,7 @@ const values = [
   },
   {
     id: '02',
-    icon: <LuShieldCheck />,
+    icon: <LuSparkles />,
     title: 'خلاقیت',
     text: 'ایده‌های تازه و رویکردهای نوآورانه را در قلب هر راه‌حل قرار می‌دهیم.',
     color: '#7c3aed',
@@ -30,7 +30,7 @@ const values = [
   },
   {
     id: '03',
-    icon: <LuSparkles/>,
+    icon: <LuEye/>,
     title: 'شفافیت',
     text: 'در تمام مراحل پروژه با مشتریان صادق و شفاف هستیم.',
     color: '#0891b2',
@@ -39,7 +39,7 @@ const values = [
   },
   {
     id: '04',
-    icon: <LuTrendingUp/>,
+    icon: <LuZap/>,
     title: 'چابکی',
     text: 'با سرعت و انعطاف‌پذیری بالا به نیازهای در حال تغییر پاسخ می‌دهیم.',
     color: '#f59e0b',
@@ -48,7 +48,7 @@ const values = [
   },
   {
     id: '05',
-    icon: <LuUsers/>,
+    icon: <LuShieldCheck/>,
     title: 'کیفیت',
     text: 'هیچ‌وقت با کیفیت کمتر از بهترین کنار نمی‌آییم.',
     color: '#16a34a',
@@ -57,7 +57,7 @@ const values = [
   },
   {
     id: '06',
-    icon: <LuZap/>,
+    icon: <LuTrendingUp/>,
     title: 'رشد مستمر',
     text: 'یادگیری و بهبود مداوم بخشی از DNA تیم ماست.',
     color: '#0369a1',

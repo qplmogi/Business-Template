@@ -7,11 +7,11 @@ import {
   LuMegaphone,
   LuBadgeCheck,
   LuPenTool,
-} from "react-icons/lu";
+} from 'react-icons/lu';
 
 const services = [
   {
-    icon: <LuPalette />,
+    icon: <LuPalette aria-hidden="true" />,
     tag: 'Design',
     title: 'طراحی UI/UX',
     text: 'طراحی رابط کاربری مدرن و تجربه کاربری روان که مخاطب را به مشتری تبدیل می‌کند.',
@@ -20,7 +20,7 @@ const services = [
     light: '#eef2ff',
   },
   {
-    icon: <LuCode />,
+    icon: <LuCode aria-hidden="true" />,
     tag: 'Development',
     title: 'توسعه وب',
     text: 'ساخت وب‌سایت‌های سریع، امن و مقیاس‌پذیر با جدیدترین تکنولوژی‌های روز.',
@@ -29,7 +29,7 @@ const services = [
     light: '#eff6ff',
   },
   {
-    icon: <LuSearch />,
+    icon: <LuSearch aria-hidden="true" />,
     tag: 'SEO',
     title: 'سئو تکنیکال',
     text: 'بهینه‌سازی موتور جستجو با رویکرد داده‌محور برای رشد پایدار ترافیک آلی.',
@@ -38,7 +38,7 @@ const services = [
     light: '#ecfeff',
   },
   {
-    icon: <LuMegaphone />,
+    icon: <LuMegaphone aria-hidden="true" />,
     tag: 'Marketing',
     title: 'دیجیتال مارکتینگ',
     text: 'استراتژی بازاریابی یکپارچه دیجیتال برای رشد برند و افزایش فروش.',
@@ -47,7 +47,7 @@ const services = [
     light: '#f8fafc',
   },
   {
-    icon: <LuBadgeCheck />,
+    icon: <LuBadgeCheck aria-hidden="true" />,
     tag: 'Branding',
     title: 'برندینگ',
     text: 'خلق هویت بصری منسجم و استراتژی برند که در ذهن مخاطب ماندگار می‌شود.',
@@ -56,7 +56,7 @@ const services = [
     light: '#f5f3ff',
   },
   {
-    icon:<LuPenTool /> ,
+    icon: <LuPenTool aria-hidden="true" />,
     tag: 'Content',
     title: 'تولید محتوا',
     text: 'محتوای هدفمند و باکیفیت که اعتماد مخاطب را جلب و او را به اقدام ترغیب می‌کند.',
@@ -75,7 +75,7 @@ function Services() {
         <AnimatedSection variant="fadeUp" delay={0.1}>
           <div className={styles.header}>
             <div className={styles.eyebrow}>
-              <span className={styles.eyebrowLine} />
+              <span className={styles.eyebrowLine} aria-hidden="true" />
               <span className={styles.eyebrowText}>خدمات ما</span>
             </div>
             <h2 className={styles.heading}>
@@ -90,68 +90,74 @@ function Services() {
         </AnimatedSection>
 
         {/* ── Grid ── */}
-        <div className={styles.grid}>
+        <ul className={styles.grid} role="list">
           {services.map((s, i) => (
-            <AnimatedSection key={s.title} variant="fadeUp" delay={i * 0.08}>
-              <div
-                className={styles.card}
-                style={{ '--card-accent': s.color, '--card-light': s.light }}
-              >
-                <div className={styles.cardTop}>
-                <div
-                  className={styles.iconBox}
-                  style={{ background: s.light }}
+            <li key={s.title}>
+              <AnimatedSection variant="fadeUp" delay={i * 0.08}>
+                <article
+                  className={styles.card}
+                  style={{ '--card-accent': s.color, '--card-light': s.light }}
+                  aria-label={s.title}
                 >
-                  <span className={styles.icon}>
-                    {s.icon}
-                  </span>
-                </div>
-                  <span
-                    className={styles.cardTag}
-                    style={{ color: s.color, background: `${s.color}18` }}
-                  >
-                    {s.tag}
-                  </span>
-                </div>
+                  <div className={styles.cardTop}>
+                    <div
+                      className={styles.iconBox}
+                      style={{ background: s.light }}
+                    >
+                      <span className={styles.icon}>{s.icon}</span>
+                    </div>
+                    <span
+                      className={styles.cardTag}
+                      style={{ color: s.color, background: `${s.color}18` }}
+                    >
+                      {s.tag}
+                    </span>
+                  </div>
 
-                <div className={styles.cardContent}>
-                  <h3 className={styles.cardTitle}>{s.title}</h3>
-                  <p className={styles.cardText}>{s.text}</p>
-                </div>
+                  <div className={styles.cardContent}>
+                    <h3 className={styles.cardTitle}>{s.title}</h3>
+                    <p className={styles.cardText}>{s.text}</p>
+                  </div>
 
-                <ul className={styles.featureList}>
-                  {s.features.map((f) => (
-                    <li key={f} className={styles.featureItem}>
-                      <span
-                        className={styles.featureDot}
-                        style={{ background: s.color }}
-                      />
-                      {f}
-                    </li>
-                  ))}
-                </ul>
+                  <ul className={styles.featureList} aria-label={`ویژگی‌های ${s.title}`}>
+                    {s.features.map((f) => (
+                      <li key={f} className={styles.featureItem}>
+                        <span
+                          className={styles.featureDot}
+                          style={{ background: s.color }}
+                          aria-hidden="true"
+                        />
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
 
-                <div className={styles.cardFooter}>
-                  <span
-                    className={styles.learnMore}
-                    style={{ color: s.color }}
-                  >
-                    بیشتر بدانید
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
-                      stroke="currentColor" strokeWidth="2.5">
-                      <path d="M5 12h14M12 5l7 7-7 7" />
-                    </svg>
-                  </span>
-                </div>
+                  <div className={styles.cardFooter}>
+                    <span
+                      className={styles.learnMore}
+                      style={{ color: s.color }}
+                    >
+                      بیشتر بدانید
+                      <svg
+                        width="14" height="14" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" strokeWidth="2.5"
+                        aria-hidden="true"
+                      >
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                      </svg>
+                    </span>
+                  </div>
 
-                <div
-                  className={styles.hoverBar}
-                  style={{ background: s.color }}
-                />
-              </div>
-            </AnimatedSection>
+                  <div
+                    className={styles.hoverBar}
+                    style={{ background: s.color }}
+                    aria-hidden="true"
+                  />
+                </article>
+              </AnimatedSection>
+            </li>
           ))}
-        </div>
+        </ul>
 
         {/* ── CTA ── */}
         <AnimatedSection variant="fadeUp" delay={0.2}>
@@ -163,8 +169,11 @@ function Services() {
               </div>
               <a href="#contact" className={styles.ctaBtn}>
                 شروع پروژه
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" strokeWidth="2.5">
+                <svg
+                  width="16" height="16" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" strokeWidth="2.5"
+                  aria-hidden="true"
+                >
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
               </a>

@@ -4,9 +4,32 @@ const prefersReducedMotion =
     typeof window !== 'undefined' &&
     window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-function useScrollAnimation() {
-    const ref = useRef(null);
+let sharedObserver = null;
+const callbackMap  = new WeakMap();
 
+function getSharedObserver() {
+    if (!sharedObserver) {
+        sharedObserver = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                const cb = callbackMap.get(entry.target);
+                if (cb) {
+                cb();
+                callbackMap.delete(entry.target);
+                sharedObserver.unobserve(entry.target);
+                }
+            }
+            });
+        },
+        { threshold: 0, rootMargin: '-10%' }
+        );
+    }
+    return sharedObserver;
+}
+
+function useScrollAnimation() {
+    const ref       = useRef(null);
     const [isInView, setIsInView] = useState(prefersReducedMotion);
 
     useEffect(() => {
@@ -21,18 +44,14 @@ function useScrollAnimation() {
         return;
         }
 
-        const observer = new IntersectionObserver(
-        ([entry]) => {
-            if (entry.isIntersecting) {
-            setIsInView(true);
-            observer.unobserve(el);
-            }
-        },
-        { threshold: 0, rootMargin: '-10%' }
-        );
-
+        const observer = getSharedObserver();
+        callbackMap.set(el, () => setIsInView(true));
         observer.observe(el);
-        return () => observer.disconnect();
+
+        return () => {
+        callbackMap.delete(el);
+        observer.unobserve(el);
+        };
     }, []);
 
     return { ref, isInView };
