@@ -1,30 +1,27 @@
 ﻿/* ════════════════════════════════
-   HERO
+   HERO — mobile-first
 ════════════════════════════════ */
 .hero {
   position: relative;
   min-height: 100vh;
   min-height: 100dvh;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   overflow: hidden;
   background: var(--color-bg);
 }
 
-/* ── پس‌زمینه ── */
 .hero::before {
   content: '';
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 65% 55% at 8% 12%,  rgba(33, 92, 70, 0.055) 0%, transparent 60%),
-    radial-gradient(ellipse 50% 65% at 95% 88%,  rgba(143,214,179,0.06) 0%, transparent 55%),
-    radial-gradient(ellipse 80% 40% at 50% 100%, rgba(33, 92, 70, 0.03) 0%, transparent 60%);
+    radial-gradient(ellipse 70% 60% at 10% 15%, rgba(33, 92, 70, 0.05) 0%, transparent 62%),
+    radial-gradient(ellipse 60% 70% at 92% 90%, rgba(143, 214, 179, 0.045) 0%, transparent 58%);
   pointer-events: none;
   z-index: 0;
 }
 
-/* ── واترمارک لوگو ── */
 .bgWatermark {
   position: absolute;
   left: -15%;
@@ -34,7 +31,8 @@
   z-index: 0;
   opacity: 0.04;
   filter: blur(3px);
-  transform: rotate(-2deg);
+  transform-origin: 50% 50%;
+  will-change: transform, opacity;
 }
 
 .watermarkImg {
@@ -42,51 +40,50 @@
   height: auto;
 }
 
-/* ── layout ── */
+/* ── layout — single column, content vertically centered ── */
 .inner {
   position: relative;
   z-index: 1;
+  flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding-top: calc(var(--navbar-h) + clamp(48px, 8vh, 96px));
-  padding-bottom: clamp(56px, 9vh, 100px);
-  gap: 0;
+  justify-content: center;
+  padding-top: calc(var(--navbar-h) + 28px);
+  padding-bottom: 64px;
+  will-change: transform, opacity;
 }
 
 /* ════════════════════════════════
-   BADGE
+   KICKER
 ════════════════════════════════ */
-.badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 14px;
-  border: 1px solid rgba(33, 92, 70, 0.18);
-  border-radius: 100px;
-  background: rgba(33, 92, 70, 0.05);
-  margin-bottom: 28px;
-}
-
-.badge span:last-child {
-  font-size: 0.78rem;
+.kicker {
+  font-size: 0.74rem;
   font-weight: 500;
-  color: var(--color-primary);
-  letter-spacing: 0.01em;
+  color: var(--color-text-light);
+  margin-bottom: 18px;
 }
 
 /* ════════════════════════════════
-   HEADLINE
+   HEADLINE — line-reveal masks
 ════════════════════════════════ */
 .headline {
-  font-size: clamp(2rem, 5.5vw, 3.6rem);
+  font-size: clamp(2.1rem, 9vw, 3.6rem);
   font-weight: 800;
   color: var(--color-secondary);
-  line-height: 1.18;
-  letter-spacing: -0.025em;
-  margin-bottom: 20px;
+  line-height: 1.15;
+  letter-spacing: 0;
+  margin-bottom: 18px;
   max-width: 680px;
+}
+
+.lineMask {
+  display: block;
+  overflow: hidden;
+}
+
+.lineInner {
+  display: block;
+  will-change: transform;
 }
 
 .headlineAccent {
@@ -97,40 +94,41 @@
    SUBTEXT
 ════════════════════════════════ */
 .subtext {
-  font-size: clamp(0.95rem, 1.6vw, 1.08rem);
+  font-size: clamp(0.95rem, 4vw, 1.08rem);
   font-weight: 400;
   color: var(--color-text-light);
-  line-height: 1.85;
-  max-width: 520px;
-  margin-bottom: 36px;
+  line-height: 1.8;
+  max-width: 480px;
+  margin-bottom: 30px;
 }
 
 /* ════════════════════════════════
-   CTA
+   ACTIONS — primary full-width, ghost link beneath (mobile priority)
 ════════════════════════════════ */
-.ctaGroup {
+.actions {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-bottom: 56px;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 14px;
+  width: 100%;
+  max-width: 340px;
+  margin-bottom: 40px;
 }
 
 .ctaPrimary {
   display: inline-flex;
   align-items: center;
-  padding: 13px 28px;
+  justify-content: center;
+  padding: 15px 24px;
   background: var(--color-primary);
   color: #fff;
-  border-radius: 8px;
+  border-radius: 10px;
   font-size: 0.95rem;
   font-weight: 700;
   text-decoration: none;
-  letter-spacing: 0.01em;
   transition: background 0.2s ease, transform 0.15s ease;
-  min-height: 48px;
-  box-shadow: 0 2px 12px rgba(33, 92, 70, 0.2);
+  min-height: 50px;
+  box-shadow: 0 2px 14px rgba(33, 92, 70, 0.22);
 }
 
 .ctaPrimary:hover {
@@ -142,70 +140,60 @@
   transform: scale(0.98);
 }
 
-.ctaSecondary {
+.ctaGhost {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 12px 22px;
-  border: 1px solid var(--color-border);
-  border-radius: 8px;
+  justify-content: center;
+  gap: 7px;
+  padding: 8px;
   color: var(--color-text);
-  font-size: 0.9rem;
+  font-size: 0.86rem;
   font-weight: 500;
   text-decoration: none;
-  background: rgba(255, 255, 255, 0.7);
-  transition: border-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
-  min-height: 48px;
+  min-height: 44px;
+  transition: color 0.2s ease, gap 0.2s ease;
 }
 
-.ctaSecondary:hover {
-  border-color: var(--color-primary);
+.ctaGhost svg {
+  transition: transform 0.2s ease;
+}
+
+.ctaGhost:hover {
   color: var(--color-primary);
-  transform: translateY(-1px);
-}
-
-.ctaSecondary:active {
-  transform: scale(0.98);
+  gap: 10px;
 }
 
 /* ════════════════════════════════
-   SOCIAL PROOF
+   PROOF — single stat on mobile, full row from small-tablet up
 ════════════════════════════════ */
 .proof {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 24px;
-  width: 100%;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
-/* آمار */
-.proofStats {
+.statGroup {
   display: flex;
   align-items: center;
-  gap: 0;
-  padding: 20px 32px;
-  background: rgba(255, 255, 255, 0.65);
-  border: 1px solid var(--color-border);
-  border-radius: 14px;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  gap: 20px;
+}
+
+.statGroup:not(:first-child) {
+  display: none;
 }
 
 .stat {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 3px;
-  padding: 0 28px;
+  gap: 4px;
 }
 
 .statNum {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 800;
   color: var(--color-secondary);
   line-height: 1;
-  letter-spacing: -0.02em;
 }
 
 .statLabel {
@@ -215,150 +203,129 @@
   font-weight: 400;
 }
 
+.statBar {
+  display: block;
+  height: 2px;
+  width: 32px;
+  margin-top: 6px;
+  background: var(--color-primary);
+  border-radius: 2px;
+}
+
 .statDivider {
   width: 1px;
-  height: 32px;
+  height: 26px;
   background: var(--color-border);
   flex-shrink: 0;
 }
 
-/* مشتریان */
-.proofClients {
+/* ════════════════════════════════
+   SCROLL CUE
+════════════════════════════════ */
+.scrollCue {
+  position: relative;
+  z-index: 1;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 14px;
-  flex-wrap: wrap;
-  justify-content: center;
+  gap: 8px;
+  padding-bottom: 24px;
+  will-change: transform, opacity;
 }
 
-.proofClientsLabel {
-  font-size: 0.75rem;
+.scrollCueLine {
+  width: 1px;
+  height: 28px;
+  background: linear-gradient(to bottom, var(--color-border), transparent);
+}
+
+.scrollCueText {
+  font-size: 0.66rem;
   color: var(--color-text-light);
-  white-space: nowrap;
-  opacity: 0.7;
+  letter-spacing: 0.04em;
 }
 
-.clientList {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
+/* ════════════════════════════════
+   SMALL TABLET — reveal full proof row
+════════════════════════════════ */
+@media (min-width: 480px) {
+  .statGroup:not(:first-child) {
+    display: flex;
+  }
 
-.clientItem {
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: var(--color-text-light);
-  padding: 4px 10px;
-  border: 1px solid var(--color-border);
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.5);
-  white-space: nowrap;
-  transition: border-color 0.2s ease, color 0.2s ease;
-}
+  .actions {
+    flex-direction: row;
+    max-width: none;
+  }
 
-.clientItem:hover {
-  border-color: rgba(33, 92, 70, 0.25);
-  color: var(--color-secondary);
+  .ctaPrimary {
+    flex: 0 0 auto;
+    padding-inline: 30px;
+  }
 }
 
 /* ════════════════════════════════
    TABLET
 ════════════════════════════════ */
-@media (max-width: 900px) {
-  .proofStats {
-    padding: 16px 20px;
-  }
-
-  .stat {
-    padding: 0 18px;
-  }
-
-  .statNum {
-    font-size: 1.2rem;
-  }
-}
-
-/* ════════════════════════════════
-   MOBILE
-════════════════════════════════ */
-@media (max-width: 640px) {
+@media (min-width: 640px) {
   .inner {
-    padding-top: calc(var(--navbar-h) + 32px);
-    padding-bottom: 48px;
+    padding-top: calc(var(--navbar-h) + 48px);
+    padding-bottom: 80px;
   }
 
-  .badge {
-    margin-bottom: 20px;
-  }
-
-  .headline {
-    letter-spacing: -0.02em;
-    margin-bottom: 16px;
-  }
-
-  .subtext {
-    margin-bottom: 28px;
-  }
-
-  .ctaGroup {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 10px;
-    width: 100%;
-    max-width: 320px;
-    margin-bottom: 40px;
-  }
-
-  .ctaPrimary,
-  .ctaSecondary {
-    justify-content: center;
-    width: 100%;
-  }
-
-  .proofStats {
-    width: 100%;
-    justify-content: center;
-    padding: 14px 12px;
-    gap: 0;
-  }
-
-  .stat {
-    padding: 0 12px;
-    flex: 1;
-  }
-
-  .statNum {
-    font-size: 1.05rem;
-  }
-
-  .statLabel {
-    font-size: 0.65rem;
-  }
-
-  .proofClients {
-    gap: 8px;
-  }
-
-  .bgWatermark {
-    width: 90%;
-    left: -40%;
-    bottom: -5%;
-    opacity: 0.03;
+  .scrollCue {
+    padding-bottom: 32px;
   }
 }
 
 /* ════════════════════════════════
-   SMALL MOBILE
+   DESKTOP — asymmetric composition (≥1200px)
+   headline block left, proof stats anchored lower-right
 ════════════════════════════════ */
-@media (max-width: 390px) {
-  .statDivider {
-    height: 24px;
+@media (min-width: 1200px) {
+  .inner {
+    display: grid;
+    grid-template-columns: 0.85fr 1.3fr;
+    column-gap: clamp(32px, 5vw, 64px);
+    align-items: start;
+    padding-top: calc(var(--navbar-h) + clamp(64px, 10vh, 120px));
   }
 
-  .clientItem {
-    font-size: 0.7rem;
-    padding: 3px 8px;
+  .kicker    { grid-column: 2; grid-row: 1; }
+  .headline  { grid-column: 2; grid-row: 2; }
+  .subtext   { grid-column: 2; grid-row: 3; }
+  .actions   { grid-column: 2; grid-row: 4; flex-direction: row; }
+
+  .proof {
+    grid-column: 1;
+    grid-row: 1 / span 4;
+    align-self: end;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-5);
+  }
+
+  .statGroup {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-5);
+  }
+
+  .statDivider { display: none; }
+
+  .scrollCue {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* ════════════════════════════════
+   REDUCED MOTION
+════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  .scrollCue {
+    display: none;
   }
 }
