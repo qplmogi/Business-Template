@@ -37,7 +37,7 @@ function Navbar() {
       const el = document.getElementById(id);
       if (!el) return null;
       const obs = new IntersectionObserver(
-        ([entry]) => { if (entry.isIntersecting) setActiveHash(`#${id}`); },
+        ([entry]) => { if (entry.isIntersecting) setActiveHash(`#${id}`);; },
         { rootMargin: '-40% 0px -55% 0px' }
       );
       obs.observe(el);
@@ -74,7 +74,7 @@ function Navbar() {
           hidden   ? styles.hidden   : '',
         ].filter(Boolean).join(' ')}
       >
-        <div className={`container ${styles.inner}`}>
+      <div className={`container ${styles.inner}`}>
 
           {/* ── Logo ── */}
           <a
@@ -146,13 +146,7 @@ function Navbar() {
 
           {/* ── Mobile Actions ── */}
           <div className={styles.mobileActions}>
-            <a
-              href="#contact"
-              className={styles.mobileCtaInline}
-              onClick={() => handleNavClick('#contact')}
-            >
-              مشاوره
-            </a>
+
             <button
               className={[
                 styles.burger,
@@ -268,4 +262,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default Navbar;  

@@ -1,87 +1,126 @@
+/* src/styles/variables.css */
 :root {
-    --color-primary:      #215C46;
-    --color-primary-dark: #174736;
-    --color-secondary:    #1F2933;
-    --color-accent:       #8FD6B3;
-    --color-bg:           #F8FAF7;
-    --color-text:         #1F2933;
-    --color-text-light:   #5C6770;
+    /* ── Core Palette (Design System §06) ── */
+    --color-ink:          #111412;
+    --color-paper:        #F4F2EC;
+    --color-brand:        #245B46;
+    --color-brand-dark:   #173D30;
+    --color-mint:         #A8D7C0;
+    --color-muted:        #6B706C;
+    --color-line:         #D8D6CE;
     --color-white:        #FFFFFF;
-    --color-border:       #DCE6DF;
-    --font-family: 'Ravi', sans-serif;
-    
-    --text-xs:   0.72rem;
-    --text-sm:   0.85rem;
-    --text-base: 1rem;
-    --text-lg:   1.125rem;
-    --text-xl:   1.25rem;
-    --text-2xl:  1.5rem;
-    --text-3xl:  1.875rem;
-    --text-4xl:  2.25rem;
 
+    /* ── Legacy aliases (kept so untouched components don't break) ── */
+    --color-primary:      var(--color-brand);
+    --color-primary-dark: var(--color-brand-dark);
+    --color-secondary:    var(--color-ink);
+    --color-accent:       var(--color-mint);
+    --color-bg:           var(--color-paper);
+    --color-text:         var(--color-ink);
+    --color-text-light:   var(--color-muted);
+    --color-border:       var(--color-line);
+
+    /* ── Semantic surface / text roles ── */
+    --surface-primary:  var(--color-paper);
+    --surface-inverse:  var(--color-ink);
+    --surface-brand:    var(--color-brand);
+
+    --text-primary:   var(--color-ink);
+    --text-secondary: var(--color-muted);
+    --text-inverse:   var(--color-paper);
+
+    --action-primary:       var(--color-brand);
+    --action-primary-hover: var(--color-brand-dark);
+
+    --border-subtle: var(--color-line);
+
+    /* ── Typography ── */
+    --font-display: 'Ravi', sans-serif;
+    --font-body:    'Vazirmatn', sans-serif;
+    --font-family:  var(--font-body);
+
+    --type-xs:  0.75rem;
+    --type-sm:  0.875rem;
+    --type-md:  1rem;
+    --type-lg:  1.25rem;
+    --type-xl:  1.5rem;
+    --type-2xl: clamp(2rem, 5vw, 3.5rem);
+    --type-3xl: clamp(2.75rem, 8vw, 6rem);
+    --type-display: clamp(2.4rem, 9vw, 5.2rem);
+
+    /* legacy scale aliases */
+    --text-xs:   var(--type-xs);
+    --text-sm:   var(--type-sm);
+    --text-base: var(--type-md);
+    --text-lg:   var(--type-lg);
+    --text-xl:   var(--type-xl);
+    --text-2xl:  var(--type-2xl);
+
+    /* ── Spacing ── */
     --space-1:  4px;
     --space-2:  8px;
     --space-3:  12px;
     --space-4:  16px;
-    --space-5:  20px;
-    --space-6:  24px;
-    --space-8:  32px;
-    --space-10: 40px;
-    --space-12: 48px;
-    --space-16: 64px;
-    --space-20: 80px;
-    --space-24: 96px;
+    --space-5:  24px;
+    --space-6:  32px;
+    --space-7:  48px;
+    --space-8:  64px;
+    --space-9:  96px;
+    --space-10: 128px;
 
-    --section-py:    96px;
-    --container-max: 1200px;
-    --container-px:  24px;
-    --navbar-h:      68px;
+    --section-py:    clamp(56px, 9vw, 120px);
+    --container-max: 1440px;
+    --container-px:  clamp(20px, 4vw, 72px);
+    --navbar-h:      72px;
 
-    --radius-sm: 8px;
-    --radius-md: 14px;
-    --radius-lg: 20px;
-    --radius-xl: 24px;
+    /* ── Shape — flat by default (Design System §11) ── */
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 0px;
+    --radius-xl: 0px;
 
-    --shadow-sm: 0 1px 3px rgba(0,0,0,0.07);
-    --shadow-md: 0 4px 16px rgba(0,0,0,0.09);
-    --shadow-lg: 0 8px 32px rgba(0,0,0,0.12);
+    --shadow-sm: none;
+    --shadow-md: none;
+    --shadow-lg: none;
 
-    --transition:      all 0.25s ease;
-    --transition-fast: all 0.15s ease;
+    /* ── Motion ── */
+    --motion-instant:  100ms;
+    --motion-fast:     180ms;
+    --motion-standard: 300ms;
+    --motion-emphasis: 500ms;
+    --motion-narrative: 800ms;
 
-    --ease-out:    cubic-bezier(0.22, 1, 0.36, 1);
-    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
-    --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+    --ease-enter:    cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-exit:     cubic-bezier(0.7, 0, 0.84, 0);
+    --ease-out:      var(--ease-enter);
+    --ease-in-out:   var(--ease-standard);
+    --ease-spring:   cubic-bezier(0.34, 1.56, 0.64, 1);
 
-    --duration-fast:   0.15s;
-    --duration-base:   0.25s;
-    --duration-slow:   0.4s;
-    --duration-slower: 0.6s;
+    --transition:      all var(--motion-standard) var(--ease-standard);
+    --transition-fast: all var(--motion-fast) var(--ease-standard);
 
-    --z-navbar:  1000;
-    --z-menu:     950;
-    --z-overlay:  900;
+    --duration-fast:   var(--motion-fast);
+    --duration-base:   var(--motion-standard);
+    --duration-slow:   var(--motion-emphasis);
+    --duration-slower: var(--motion-narrative);
+
+    /* ── Z-index ── */
+    --z-base:    0;
+    --z-content: 10;
+    --z-navbar:  100;
+    --z-floating: 200;
+    --z-overlay: 300;
+    --z-menu:    400;
+    --z-top:     500;
 }
 
 @media (max-width: 1024px) {
-    :root {
-    --section-py:   72px;
-    --container-px: 20px;
-    }
+    :root { --section-py: clamp(48px, 8vw, 80px); }
 }
-
 @media (max-width: 768px) {
-    :root {
-    --section-py:   52px;
-    --container-px: 16px;
-    --navbar-h:     60px;
-    }
+    :root { --navbar-h: 60px; }
 }
-
 @media (max-width: 480px) {
-    :root {
-    --section-py:   40px;
-    --container-px: 25px;
-    --navbar-h:     56px;
-    }
+    :root { --navbar-h: 56px; }
 }

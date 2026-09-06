@@ -17,7 +17,7 @@ const contactInfo = [
     sub: 'شنبه تا چهارشنبه، ۹ تا ۱۸',
   },
   {
-    icon: '✉️',
+    icon: '✉',
     label: 'ایمیل',
     value: 'info@rishehcompany.ir',
     sub: 'پاسخ در کمتر از ۲۴ ساعت',
@@ -69,7 +69,7 @@ function validateField(name, value) {
       return '';
 
     case 'phone':
-      if (!value.trim()) return ''; 
+      if (!value.trim()) return '';
       const digitsOnly = value.replace(/[\s\-]/g, '');
       if (!PHONE_REGEX.test(digitsOnly)) return 'شماره موبایل معتبر نیست (مثال: ۰۹۱۲۳۴۵۶۷۸۹)';
       return '';
@@ -203,6 +203,7 @@ function Contact() {
         <AnimatedSection variant="fadeUp" delay={0.1}>
           <div className={styles.header}>
             <div className={styles.eyebrow}>
+              <span className={styles.eyebrowNum}>۰۶</span>
               <span className={styles.eyebrowLine} />
               <span className={styles.eyebrowText}>تماس با ما</span>
             </div>
@@ -237,7 +238,7 @@ function Contact() {
 
             <div className={styles.guaranteeCard}>
               <div className={styles.guaranteeTop}>
-                <span className={styles.guaranteeIcon} aria-hidden="true">🛡️</span>
+                <span className={styles.guaranteeIcon} aria-hidden="true">🛡</span>
                 <strong>تضمین ما</strong>
               </div>
               <ul className={styles.guaranteeList}>
@@ -245,7 +246,7 @@ function Contact() {
                   'مشاوره اولیه کاملاً رایگان',
                   'پاسخگویی در کمتر از ۲۴ ساعت',
                   'قرارداد شفاف و مشخص',
-                  'گزارش‌دهی منظم پیشرفت',
+                  'گزارشدهی منظم پیشرفت',
                 ].map((item) => (
                   <li key={item}>
                     <span className={styles.checkIcon} aria-hidden="true">✓</span>
@@ -263,7 +264,7 @@ function Contact() {
                 <div className={styles.successState} role="alert">
                   <div className={styles.successIcon} aria-hidden="true">✓</div>
                   <h3>پیام شما ارسال شد!</h3>
-                  <p>تیم ما در کمتر از ۲۴ ساعت با شما تماس می‌گیرد.</p>
+                  <p>تیم ما در کمتر از ۲۴ ساعت با شما تماس میگیرد.</p>
                   <button
                     className={styles.resetBtn}
                     onClick={() => setSubmitted(false)}
@@ -280,10 +281,10 @@ function Contact() {
                 >
                   <div className={styles.formHeader}>
                     <h3 className={styles.formTitle}>درخواست مشاوره رایگان</h3>
-                    <p className={styles.formSub}>فیلدهای ستاره‌دار الزامی هستند</p>
+                    <p className={styles.formSub}>فیلدهای ستارهدار الزامی هستند</p>
                   </div>
 
-                  {/* Honeypot — مخفی از کاربر، ربات‌ها پر می‌کنند */}
+                  {/* Honeypot — مخفی از کاربر، رباتها پر میکنند */}
                   <div style={{ display: 'none' }} aria-hidden="true">
                     <input
                       type="text"
@@ -412,7 +413,7 @@ function Contact() {
                       onFocus={() => setFocused('message')}
                       onBlur={handleBlur}
                       className={styles.textarea}
-                      placeholder="درباره پروژه‌تان بگویید..."
+                      placeholder="درباره پروژهتان بگویید..."
                       rows={4}
                       maxLength={1000}
                       aria-required="true"

@@ -1,6 +1,7 @@
-/* ════════════════════════════════
-ABOUT
-════════════════════════════════ */
+/* ═══════════════════════════════════════
+   ABOUT
+═══════════════════════════════════════ */
+
 .about {
     padding: var(--section-py) 0;
     background: var(--color-white);
@@ -10,271 +11,218 @@ ABOUT
 .about::before {
     content: '';
     position: absolute;
-    top: 0; left: 0; right: 0;
+    inset-inline: 0;
+    top: 0;
     height: 1px;
-    background: linear-gradient(
-    90deg, transparent, var(--color-border), transparent
-    );
+    background: var(--color-line);
     pointer-events: none;
 }
 
+
+/* ═══════════════════════════════════════
+   MAIN LAYOUT
+═══════════════════════════════════════ */
+
 .wrapper {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: clamp(40px, 6vw, 72px);
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    gap: clamp(48px, 7vw, 96px);
     align-items: center;
 }
 
-/* ════════════════════════════════
-    VISUAL COL
-════════════════════════════════ */
+
+/* ═══════════════════════════════════════
+   VISUAL
+═══════════════════════════════════════ */
+
 .visual {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-}
-
-.teamCard {
-    background: var(--color-bg);
-    border: 1px solid var(--color-border);
-    border-radius: 20px;
-    padding: clamp(16px, 2.5vw, 22px);
-    box-shadow: var(--shadow-sm);
-}
-
-.teamCardHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 16px;
-    gap: 8px;
-}
-
-.liveTag {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: #16a34a;
-    background: #f0fdf4;
-    border: 1px solid #bbf7d0;
-    padding: 4px 10px;
-    border-radius: 100px;
-    white-space: nowrap;
-}
-@keyframes pulse {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50%       { opacity: 0.5; transform: scale(1.3); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .liveDot { animation: none; }
-}
-
-.memberCount {
-    font-size: 0.75rem;
-    color: var(--color-text-light);
-    font-weight: 500;
-    white-space: nowrap;
-}
-
-.teamGrid {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    margin-bottom: 16px;
-}
-
-.memberItem {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 7px 8px;
-    border-radius: 10px;
-    transition: background 0.2s ease;
-    min-width: 0;
-}
-
-.memberItem:hover { background: var(--color-white); }
-
-.avatar {
-
-    width: 36px;
-
-    height: 36px;
-
-    border-radius: 9px;
-
-    overflow: hidden;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    flex-shrink: 0;
-
-    opacity: 0;
-
-    animation: popIn 0.4s ease forwards;
-
-    background: var(--color-bg);
-
-    border: 1px solid var(--color-border);
-
-}
-
-.avatar img {
-
     width: 100%;
+    min-width: 0;
 
-    height: 100%;
-
-    object-fit: cover;
-
-    display: block;
-
-}
-
-@keyframes popIn {
-    from { opacity: 0; transform: scale(0.6) rotate(-8deg); }
-    to   { opacity: 1; transform: scale(1) rotate(0); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .avatar { animation: none; opacity: 1; }
-}
-
-.memberInfo {
     display: flex;
     flex-direction: column;
-    gap: 1px;
-    min-width: 0;
-    overflow: hidden;
+    gap: 18px;
 }
 
-.memberName {
-    font-size: 0.82rem;
-    font-weight: 600;
-    color: var(--color-secondary);
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
 
-.memberRole {
-    font-size: 0.68rem;
-    color: var(--color-text-light);
-    unicode-bidi: plaintext;
-    text-align: start;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
+/* ═══════════════════════════════════════
+   VISUAL HEADER
+═══════════════════════════════════════ */
 
-.teamFooter {
+.visualHeader {
     display: flex;
     align-items: center;
     gap: 10px;
-    padding-top: 14px;
-    border-top: 1px solid var(--color-border);
+
+    color: var(--color-muted);
+    font-size: 0.72rem;
 }
 
-.avatarStack {
-    display: flex;
-    flex-direction: row-reverse;
+.visualNumber {
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    color: var(--color-brand);
+}
+
+.visualLine {
+    width: 28px;
+    height: 1px;
+    background: var(--color-line);
     flex-shrink: 0;
 }
 
-.stackAvatar {
-    width: 26px; height: 26px;
-    border-radius: 50%;
-    border: 2px solid var(--color-white);
+
+/* ═══════════════════════════════════════
+   BRAND BLOCK
+═══════════════════════════════════════ */
+
+.brandBlock {
+    position: relative;
+
+    min-height: clamp(300px, 35vw, 430px);
+
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
-    color: white;
-    font-size: 0.6rem;
-    font-weight: 700;
-    margin-right: -7px;
-    flex-shrink: 0;
-}
 
-.moreCount {
-    width: 26px; height: 26px;
-    border-radius: 50%;
-    border: 2px solid var(--color-white);
-    background: var(--color-border);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.55rem;
-    font-weight: 700;
-    color: var(--color-text-light);
-    margin-right: -7px;
-    flex-shrink: 0;
-}
-
-.footerText {
-    font-size: 0.75rem;
-    color: var(--color-text-light);
-    white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
+
+    background: var(--color-paper);
+
+    padding: clamp(30px, 5vw, 60px);
 }
+
+
+/* Huge typography */
+
+.brandOutline {
+    position: absolute;
+
+    left: -12px;
+    top: 12%;
+
+    font-family: var(--font-display);
+    font-size: clamp(5rem, 12vw, 10rem);
+    font-weight: 800;
+
+    line-height: 0.8;
+
+    color: transparent;
+    -webkit-text-stroke: 1px var(--color-line);
+
+    opacity: 0.65;
+
+    user-select: none;
+    pointer-events: none;
+}
+
+
+.brandSolid {
+    position: relative;
+    z-index: 1;
+
+    font-family: var(--font-display);
+    font-size: clamp(4rem, 9vw, 7rem);
+    font-weight: 800;
+
+    line-height: 0.9;
+
+    color: var(--color-brand);
+}
+
+
+/* Statement */
+
+.brandStatement {
+    position: relative;
+    z-index: 2;
+
+    margin: clamp(28px, 4vw, 44px) 0 0;
+
+    max-width: 260px;
+
+    font-family: var(--font-display);
+    font-size: clamp(1.15rem, 2.5vw, 1.55rem);
+    font-weight: 700;
+
+    line-height: 1.8;
+
+    color: var(--color-ink);
+}
+
+
+/* ═══════════════════════════════════════
+   METRIC CARD
+═══════════════════════════════════════ */
 
 .metricCard {
-    background: var(--color-secondary);
-    border-radius: 16px;
-    padding: clamp(14px, 2vw, 18px) clamp(16px, 2.5vw, 20px);
+    background: var(--color-ink);
+
+    padding: clamp(16px, 2vw, 20px)
+        clamp(18px, 2.5vw, 24px);
+
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
 }
 
 .metricTop {
     display: flex;
     align-items: center;
-    gap: 12px;
 }
 
+.metricTop > div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
 
 .metricValue {
-    font-size: clamp(1.2rem, 2.5vw, 1.4rem);
-    font-weight: 800;
-    color: var(--color-white);
+    font-family: var(--font-display);
+    font-size: clamp(1.3rem, 2.5vw, 1.6rem);
+    font-weight: 700;
+
+    color: var(--color-paper);
     line-height: 1;
 }
 
 .metricLabel {
-    font-size: 0.75rem;
-    color: rgba(255,255,255,0.5);
-    margin-top: 2px;
+    font-size: 0.74rem;
+    color: rgba(244, 242, 236, 0.55);
 }
 
 .metricBar {
-    height: 4px;
-    background: rgba(255,255,255,0.1);
-    border-radius: 100px;
+    width: 100%;
+    height: 2px;
+
+    background: rgba(244, 242, 236, 0.15);
+
     overflow: hidden;
 }
 
 .metricFill {
     height: 100%;
-    background: linear-gradient(90deg, var(--color-accent), #818cf8);
-    border-radius: 100px;
+    background: var(--color-mint);
 }
 
-/* ════════════════════════════════
-    CONTENT COL
-════════════════════════════════ */
+
+/* ═══════════════════════════════════════
+   CONTENT
+═══════════════════════════════════════ */
+
 .content {
+    min-width: 0;
+
     display: flex;
     flex-direction: column;
+
     gap: clamp(16px, 2.5vw, 22px);
 }
+
+
+/* ═══════════════════════════════════════
+   EYEBROW
+═══════════════════════════════════════ */
 
 .eyebrow {
     display: flex;
@@ -282,443 +230,422 @@ ABOUT
     gap: 10px;
 }
 
+.eyebrowNum {
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    color: var(--color-brand);
+}
+
 .eyebrowLine {
-    width: 28px; height: 2px;
-    background: var(--color-primary);
-    border-radius: 2px;
+    width: 24px;
+    height: 1px;
+
+    background: var(--color-line);
+
     display: block;
     flex-shrink: 0;
 }
 
 .eyebrowText {
-    font-size: 0.78rem;
-    font-weight: 700;
-    color: var(--color-primary);
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    white-space: nowrap;
+    font-size: 0.76rem;
+    font-weight: 500;
+
+    color: var(--color-muted);
 }
 
+
+/* ═══════════════════════════════════════
+   HEADING
+═══════════════════════════════════════ */
+
 .heading {
-    font-size: clamp(1.6rem, 3.5vw, 2.5rem);
-    font-weight: 800;
-    color: var(--color-secondary);
-    line-height: 1.3;
-    letter-spacing: 0;
+    font-family: var(--font-display);
+
+    font-size: clamp(1.8rem, 3.5vw, 2.7rem);
+    font-weight: 700;
+
+    color: var(--color-ink);
+
+    line-height: 1.35;
+
+    margin: 0;
 }
 
 .gradientText {
-    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: var(--color-primary);
+    color: var(--color-brand);
+    margin-inline: 6px;
 }
+
+
+/* ═══════════════════════════════════════
+   TEXT
+═══════════════════════════════════════ */
 
 .lead {
-    font-size: clamp(0.88rem, 1.5vw, 1rem);
-    color: var(--color-text-light);
+    max-width: 54ch;
+
+    margin: 0;
+
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+
+    color: var(--color-muted);
+
+    line-height: 2;
+}
+
+.description {
+    max-width: 54ch;
+
+    margin: 0;
+
+    padding-inline-start: 14px;
+
+    border-inline-start: 2px solid var(--color-brand);
+
+    font-size: clamp(0.82rem, 1.4vw, 0.92rem);
+
+    color: var(--color-ink);
+
     line-height: 1.9;
-    max-width: 52ch;
 }
 
-/* ── Mobile Metric ── */
-.mobileMetric {
-    display: none;
-    align-items: center;
-    background: var(--color-bg);
-    border: 1px solid var(--color-border);
-    border-radius: 14px;
-    padding: clamp(14px, 3vw, 18px) clamp(12px, 3vw, 16px);
-}
 
-.mobileMetricItem {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 3px;
-    text-align: center;
-    min-width: 0;
-    padding: 0 4px;
-}
+/* ═══════════════════════════════════════
+   STATS
+═══════════════════════════════════════ */
 
-.mobileMetricItem strong {
-    font-size: clamp(1.1rem, 4vw, 1.4rem);
-    font-weight: 800;
-    color: var(--color-primary);
-    line-height: 1;
-}
-
-.mobileMetricItem span {
-    font-size: clamp(0.62rem, 2vw, 0.72rem);
-    color: var(--color-text-light);
-    white-space: nowrap;
-}
-
-.mobileMetricDivider {
-    width: 1px;
-    height: 32px;
-    background: var(--color-border);
-    flex-shrink: 0;
-}
-
-/* ── Stats Grid ── */
 .statsGrid {
     display: grid;
+
     grid-template-columns: 1fr 1fr;
-    gap: clamp(12px, 2vw, 16px);
+
+    gap: clamp(14px, 2vw, 20px);
+
+    margin: 8px 0 0;
 }
 
 .statItem {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+
+    gap: 6px;
+
     min-width: 0;
 }
 
 .statTop {
     display: flex;
+
     justify-content: space-between;
     align-items: baseline;
+
     gap: 4px;
 }
 
 .statValue {
+    margin: 0;
+
+    font-family: var(--font-display);
+
     font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-    font-weight: 800;
-    color: var(--color-secondary);
+
+    font-weight: 700;
+
+    color: var(--color-ink);
+
     line-height: 1;
 }
 
 .statPercent {
-    font-size: 0.7rem;
-    color: var(--color-text-light);
-    flex-shrink: 0;
+    font-size: 0.68rem;
+    color: var(--color-muted);
 }
 
 .statLabel {
-    font-size: clamp(0.72rem, 1.5vw, 0.78rem);
-    color: var(--color-text-light);
+    margin: 0;
+
+    font-size: clamp(0.7rem, 1.5vw, 0.78rem);
+
+    color: var(--color-muted);
+
     white-space: nowrap;
+
     overflow: hidden;
+
     text-overflow: ellipsis;
 }
 
 .statTrack {
-    height: 3px;
-    background: var(--color-border);
-    border-radius: 100px;
+    height: 2px;
+
+    background: var(--color-line);
+
     overflow: hidden;
 }
 
 .statFill {
-    height: 100%;
     width: var(--w);
-    background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
-    border-radius: 100px;
+
+    height: 100%;
+
+    background: var(--color-brand);
+
     animation: fillBar 1s ease forwards;
 }
 
 @keyframes fillBar {
-    from { width: 0; }
-    to   { width: var(--w); }
+    from {
+        width: 0;
+    }
+
+    to {
+        width: var(--w);
+    }
 }
 
-@media (prefers-reduced-motion: reduce) {
-    .statFill { animation: none; }
-}
 
-/* ── Tags ── */
-.tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 7px;
-}
-
-.tag {
-    padding: 6px 13px;
-    background: var(--color-bg);
-    border: 1px solid var(--color-border);
-    border-radius: 100px;
-    font-size: clamp(0.7rem, 1.5vw, 0.76rem);
-    font-weight: 500;
-    color: var(--color-text-light);
-    transition: var(--transition);
-    min-height: 32px;
-    display: flex;
-    align-items: center;
-    white-space: nowrap;
-}
-
-.tag:hover {
-    border-color: var(--color-primary);
-    color: var(--color-primary);
-    background: rgba(37,99,235,0.05);
-}
-.mobileTeam {
-
-    display: none;
-
-}
-
-.mobileTeamHeader {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    margin-bottom: 18px;
-
-}
-
-.mobileTeamSlider {
-
-    display: flex;
-
-    gap: 16px;
-
-    overflow-x: auto;
-
-    scroll-snap-type: x mandatory;
-
-    scroll-padding-inline: 20px;
-
-    -webkit-overflow-scrolling: touch;
-
-    scrollbar-width: none;
-
-    padding-bottom: 8px;
-
-}
-
-.mobileTeamSlider::-webkit-scrollbar {
-
-    display: none;
-
-}
-
-.mobileMemberCard {
-
-    flex: 0 0 82%;
-
-    scroll-snap-align: center;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    text-align: center;
-
-    background: var(--color-white);
-
-    border: 1px solid var(--color-border);
-
-    border-radius: 18px;
-
-    padding: 22px 18px;
-
-    box-shadow: var(--shadow-sm);
-
-}
-
-.mobileMemberCard img {
-
-    width: 72px;
-
-    height: 72px;
-
-    border-radius: 50%;
-
-    object-fit: cover;
-
-    margin-bottom: 14px;
-
-}
-
-.moreCard {
-
-    flex: 0 0 82%;
-
-    scroll-snap-align: center;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    border: 2px dashed var(--color-border);
-
-    border-radius: 18px;
-
-    color: var(--color-primary);
-
-    font-weight: 700;
-
-    text-decoration: none;
-
-}
-
-/* ════════════════════════════════
-    TABLET
-════════════════════════════════ */
-
+/* ═══════════════════════════════════════
+   TABLET
+═══════════════════════════════════════ */
 
 @media (max-width: 960px) {
 
     .wrapper {
-
         grid-template-columns: 1fr;
-
-        gap: 28px;
-
+        gap: 42px;
     }
 
     .visual {
-
-        display: none;
-
-    }
-
-    .mobileMetric {
-
-        display: flex;
-
-    }
-
-    .mobileTeam {
-
-        display: block;
-
+        order: 2;
     }
 
     .content {
-
-        gap: 16px;
-
+        order: 1;
     }
 
-    .heading {
+    .brandBlock {
+        min-height: 330px;
+    }
 
+    .content {
+        align-items: center;
         text-align: center;
-
     }
 
     .eyebrow {
-
         justify-content: center;
-
     }
 
-    .lead {
-
+    .lead,
+    .description {
+        max-width: 680px;
         text-align: center;
-
-        max-width: 100%;
-
     }
 
-    .tags {
+    .description {
+        border-inline-start: 0;
+        border-top: 1px solid var(--color-brand);
 
-        justify-content: center;
-
+        padding-inline-start: 0;
+        padding-top: 12px;
     }
 
+    .statsGrid {
+        width: 100%;
+        max-width: 680px;
+        text-align: start;
+    }
 }
-/* ════════════════════════════════
-    MOBILE
-════════════════════════════════ */
-/* ════════════════════════════════
+
+
+/* ═══════════════════════════════════════
    MOBILE
-════════════════════════════════ */
+═══════════════════════════════════════ */
 
 @media (max-width: 600px) {
 
-    .mobileTeamSlider {
-        gap: 14px;
-        scroll-padding-inline: 16px;
+    .about {
+        padding: clamp(60px, 14vw, 90px) 0;
     }
 
-    .mobileMemberCard,
-    .moreCard {
-        flex-basis: 86%;
-        padding: 20px 16px;
+    .wrapper {
+        gap: 34px;
     }
 
-    .mobileMemberCard img {
-        width: 64px;
-        height: 64px;
+    /* Content first */
+
+    .content {
+        width: 100%;
+        gap: 16px;
     }
+
+    .eyebrow {
+        justify-content: flex-start;
+        width: 100%;
+        gap: 8px;
+    }
+
+    .heading {
+        width: 100%;
+
+        font-size: clamp(1.65rem, 8vw, 2.15rem);
+
+        line-height: 1.45;
+
+        text-align: right;
+    }
+
+    .gradientText {
+        margin-inline: 4px;
+    }
+
+    .lead {
+        width: 100%;
+
+        font-size: 0.86rem;
+
+        line-height: 2;
+
+        text-align: right;
+    }
+
+    .description {
+        width: 100%;
+
+        font-size: 0.8rem;
+
+        line-height: 1.9;
+
+        text-align: right;
+
+        border-top: 0;
+        border-inline-start: 2px solid var(--color-brand);
+
+        padding-top: 0;
+        padding-inline-start: 12px;
+    }
+
+
+    /* ═══════════════════════════════
+       BRAND VISUAL
+    ═══════════════════════════════ */
+
+    .visual {
+        width: 100%;
+        gap: 12px;
+    }
+
+    .visualHeader {
+        order: 1;
+
+        font-size: 0.65rem;
+    }
+
+    .brandBlock {
+        order: 2;
+
+        min-height: 260px;
+
+        padding: 28px 24px;
+    }
+
+    .brandOutline {
+        top: 16%;
+        left: -8px;
+
+        font-size: clamp(4.2rem, 22vw, 7rem);
+    }
+
+    .brandSolid {
+        font-size: clamp(4rem, 20vw, 6rem);
+    }
+
+    .brandStatement {
+        margin-top: 24px;
+
+        font-size: 1rem;
+
+        line-height: 1.8;
+    }
+
+    .metricCard {
+        order: 3;
+
+        padding: 15px 18px;
+    }
+
+
+    /* ═══════════════════════════════
+       STATS
+    ═══════════════════════════════ */
 
     .statsGrid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
+        width: 100%;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 16px 12px;
+
+        margin-top: 8px;
+
+        text-align: right;
     }
 
-    .tags {
-        gap: 6px;
+    .statValue {
+        font-size: 1.15rem;
     }
 
-    .tag {
-        font-size: 0.7rem;
-        padding: 5px 10px;
-        min-height: 30px;
+    .statPercent {
+        font-size: 0.62rem;
+    }
+
+    .statLabel {
+        font-size: 0.68rem;
     }
 }
 
 
-/* ════════════════════════════════
-    SMALL MOBILE
-════════════════════════════════ */
-/* ════════════════════════════════
+/* ═══════════════════════════════════════
    SMALL MOBILE
-════════════════════════════════ */
+═══════════════════════════════════════ */
 
-@media (max-width: 480px) {
+@media (max-width: 400px) {
+
+    .brandBlock {
+        min-height: 230px;
+        padding: 24px 20px;
+    }
+
+    .brandSolid {
+        font-size: 4rem;
+    }
+
+    .brandStatement {
+        font-size: 0.9rem;
+        margin-top: 20px;
+    }
 
     .statsGrid {
-        gap: 8px;
+        gap: 14px 10px;
     }
 
-    .statItem {
-        gap: 4px;
+    .statValue {
+        font-size: 1.05rem;
     }
 
-    .mobileMetricItem strong {
-        font-size: 1rem;
+    .statLabel {
+        font-size: 0.64rem;
     }
+}
 
-    .mobileMetricItem span {
-        font-size: 0.6rem;
-    }
 
-    .mobileTeamSlider {
-        gap: 12px;
-    }
+/* ═══════════════════════════════════════
+   REDUCED MOTION
+═══════════════════════════════════════ */
 
-    .mobileMemberCard,
-    .moreCard {
-        flex-basis: 90%;
-        padding: 18px 14px;
-    }
+@media (prefers-reduced-motion: reduce) {
 
-    .mobileMemberCard img {
-        width: 58px;
-        height: 58px;
-    }
-
-    .tags {
-        gap: 5px;
-    }
-
-    .tag {
-        font-size: 0.68rem;
-        padding: 4px 9px;
-        min-height: 28px;
+    .statFill {
+        animation: none;
     }
 }

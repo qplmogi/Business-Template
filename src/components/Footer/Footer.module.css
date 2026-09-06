@@ -2,8 +2,8 @@
   FOOTER
 ════════════════════════════════ */
 .footer {
-  background: var(--color-secondary);
-  color: var(--color-white);
+  background: var(--color-ink);
+  color: var(--color-paper);
   position: relative;
   padding-bottom: env(safe-area-inset-bottom, 0);
 }
@@ -12,30 +12,10 @@
   BANNER
 ════════════════════════════════ */
 .banner {
-  background: linear-gradient(135deg, var(--color-primary), #1d4ed8);
+  background: var(--color-brand);
   padding: clamp(32px, 5vw, 48px) 0;
   position: relative;
   overflow: hidden;
-}
-
-.banner::before {
-  content: '';
-  position: absolute;
-  top: -60px; right: -60px;
-  width: 220px; height: 220px;
-  background: rgba(255,255,255,0.05);
-  border-radius: 50%;
-  pointer-events: none;
-}
-
-.banner::after {
-  content: '';
-  position: absolute;
-  bottom: -80px; left: 10%;
-  width: 300px; height: 300px;
-  background: rgba(255,255,255,0.04);
-  border-radius: 50%;
-  pointer-events: none;
 }
 
 .bannerInner {
@@ -50,16 +30,17 @@
 .bannerText { min-width: 0; }
 
 .bannerText h2 {
+  font-family: var(--font-display);
   font-size: clamp(1.1rem, 2.5vw, 1.8rem);
-  font-weight: 800;
-  color: var(--color-white);
+  font-weight: 700;
+  color: var(--color-paper);
   margin-bottom: 6px;
   letter-spacing: 0;
 }
 
 .bannerText p {
   font-size: clamp(0.82rem, 1.4vw, 0.92rem);
-  color: rgba(255,255,255,0.72);
+  color: rgba(244, 242, 236, 0.75);
 }
 
 .bannerBtn {
@@ -67,21 +48,20 @@
   align-items: center;
   gap: 8px;
   padding: clamp(11px, 1.5vw, 14px) clamp(18px, 2.5vw, 28px);
-  background: var(--color-white);
-  color: var(--color-primary);
-  border-radius: 10px;
+  background: var(--color-paper);
+  color: var(--color-brand-dark);
   font-size: clamp(0.85rem, 1.5vw, 0.92rem);
   font-weight: 700;
   text-decoration: none;
   white-space: nowrap;
   flex-shrink: 0;
   min-height: 48px;
-  transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease;
+  transition: background var(--motion-fast) var(--ease-standard), transform var(--motion-fast) var(--ease-standard);
 }
 
 .bannerBtn:hover {
-  background: var(--color-accent);
-  color: var(--color-secondary);
+  background: var(--color-ink);
+  color: var(--color-paper);
   transform: translateY(-2px);
 }
 
@@ -92,12 +72,12 @@
 ════════════════════════════════ */
 .main {
   padding: clamp(40px, 6vw, 72px) 0 clamp(28px, 4vw, 48px);
-  border-bottom: 1px solid rgba(255,255,255,0.07);
+  border-bottom: 1px solid rgba(244, 242, 236, 0.08);
 }
 
 .mainInner {
   display: grid;
-  grid-template-columns: 1.6fr 1.4fr 1.4fr;
+  grid-template-columns: 1fr;
   gap: clamp(24px, 4vw, 48px);
   align-items: start;
 }
@@ -115,28 +95,29 @@
 .logo {
   display: inline-flex;
   align-items: center;
-  gap: 9px;
+  gap: 8px;
   text-decoration: none;
   min-height: 44px;
   width: fit-content;
 }
 
 .logoDot {
-  color: var(--color-accent);
-  font-size: 0.85rem;
+  color: var(--color-mint);
+  font-size: 0.8rem;
   flex-shrink: 0;
 }
 
 .logoText {
+  font-family: var(--font-display);
   font-size: clamp(0.95rem, 1.5vw, 1.2rem);
-  font-weight: 800;
-  color: var(--color-white);
+  font-weight: 700;
+  color: var(--color-paper);
   white-space: nowrap;
 }
 
 .brandDesc {
   font-size: clamp(0.8rem, 1.3vw, 0.88rem);
-  color: rgba(255,255,255,0.48);
+  color: rgba(244, 242, 236, 0.5);
   line-height: 1.85;
 }
 
@@ -147,26 +128,24 @@
 }
 
 .socialBtn {
-  width: 38px; height: 38px;
-  border-radius: 10px;
-  background: rgba(255,255,255,0.07);
-  border: 1px solid rgba(255,255,255,0.1);
+  width: 36px; height: 36px;
+  background: rgba(244, 242, 236, 0.06);
+  border: 1px solid rgba(244, 242, 236, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: rgba(255,255,255,0.55);
-  transition: background 0.25s ease, border-color 0.25s ease,
-              color 0.25s ease, transform 0.2s ease;
+  color: rgba(244, 242, 236, 0.6);
+  transition: background var(--motion-fast) var(--ease-standard), border-color var(--motion-fast) var(--ease-standard),
+              color var(--motion-fast) var(--ease-standard);
   text-decoration: none;
   flex-shrink: 0;
 }
 
 @media (hover: hover) and (pointer: fine) {
   .socialBtn:hover {
-    background: var(--color-primary);
-    border-color: var(--color-primary);
-    color: var(--color-white);
-    transform: translateY(-3px);
+    background: var(--color-brand);
+    border-color: var(--color-brand);
+    color: var(--color-paper);
   }
 }
 
@@ -177,31 +156,13 @@
   align-items: center;
   gap: 8px;
   padding: 7px 13px;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(244, 242, 236, 0.05);
+  border: 1px solid rgba(244, 242, 236, 0.1);
   border-radius: 100px;
   font-size: 0.76rem;
-  color: rgba(255,255,255,0.55);
+  color: rgba(244, 242, 236, 0.55);
   width: fit-content;
   white-space: nowrap;
-}
-
-.trustedDot {
-  width: 7px; height: 7px;
-  background: #4ade80;
-  border-radius: 50%;
-  display: block;
-  flex-shrink: 0;
-  animation: pulse 2s ease-in-out infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0.4; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .trustedDot { animation: none; }
 }
 
 /* ════════════════════════════════
@@ -215,9 +176,9 @@
 }
 
 .colTitle {
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   font-weight: 700;
-  color: var(--color-white);
+  color: var(--color-paper);
   letter-spacing: 0.06em;
   text-transform: uppercase;
   white-space: nowrap;
@@ -231,8 +192,8 @@
 
 .footerLink {
   font-size: clamp(0.8rem, 1.3vw, 0.87rem);
-  color: rgba(255,255,255,0.48);
-  transition: color 0.2s ease;
+  color: rgba(244, 242, 236, 0.5);
+  transition: color var(--motion-fast) var(--ease-standard);
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -244,14 +205,14 @@
   content: '';
   width: 0;
   height: 1px;
-  background: var(--color-accent);
-  transition: width 0.2s ease;
+  background: var(--color-mint);
+  transition: width var(--motion-fast) var(--ease-standard);
   display: block;
   flex-shrink: 0;
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .footerLink:hover { color: var(--color-white); gap: 10px; }
+  .footerLink:hover { color: var(--color-paper); gap: 10px; }
   .footerLink:hover::before { width: 12px; }
 }
 
@@ -267,26 +228,24 @@
 
 .newsletterDesc {
   font-size: clamp(0.78rem, 1.3vw, 0.85rem);
-  color: rgba(255,255,255,0.48);
+  color: rgba(244, 242, 236, 0.5);
   line-height: 1.75;
 }
 
 .newsletterForm {
   display: flex;
-  border-radius: 10px;
-  overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.12);
+  border: 1px solid rgba(244, 242, 236, 0.14);
 }
 
 .newsletterInput {
   flex: 1;
   padding: 12px 14px;
-  background: rgba(255,255,255,0.07);
+  background: rgba(244, 242, 236, 0.06);
   border: none;
   outline: none;
   font-size: max(16px, 1rem);
   font-family: var(--font-family);
-  color: var(--color-white);
+  color: var(--color-paper);
   min-width: 0;
   min-height: 48px;
   -webkit-appearance: none;
@@ -294,33 +253,33 @@
 }
 
 .newsletterInput::placeholder {
-  color: rgba(255,255,255,0.28);
+  color: rgba(244, 242, 236, 0.3);
   font-size: max(14px, 0.875rem);
 }
 
-.newsletterInput:focus { background: rgba(255,255,255,0.1); }
+.newsletterInput:focus { background: rgba(244, 242, 236, 0.1); }
 
 .newsletterBtn {
   padding: 12px 16px;
-  background: var(--color-primary);
+  background: var(--color-brand);
   border: none;
-  color: var(--color-white);
+  color: var(--color-paper);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.2s ease;
+  transition: background var(--motion-fast) var(--ease-standard);
   flex-shrink: 0;
   min-width: 48px;
   min-height: 48px;
 }
 
-.newsletterBtn:hover  { background: var(--color-accent); color: var(--color-secondary); }
-.newsletterBtn:active { background: var(--color-primary-dark); }
+.newsletterBtn:hover  { background: var(--color-mint); color: var(--color-ink); }
+.newsletterBtn:active { background: var(--color-brand-dark); }
 
 .newsletterNote {
   font-size: 0.72rem;
-  color: rgba(255,255,255,0.32);
+  color: rgba(244, 242, 236, 0.32);
   line-height: 1.5;
 }
 
@@ -334,15 +293,15 @@
 
 .bottomInner {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
+  text-align: center;
+  gap: 8px;
 }
 
 .copyright {
   font-size: clamp(0.72rem, 1.2vw, 0.8rem);
-  color: rgba(255,255,255,0.32);
+  color: rgba(244, 242, 236, 0.32);
 }
 
 .bottomLinks {
@@ -350,52 +309,63 @@
   align-items: center;
   gap: 12px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .bottomLinks a {
   font-size: clamp(0.7rem, 1.2vw, 0.78rem);
-  color: rgba(255,255,255,0.32);
-  transition: color 0.2s ease;
+  color: rgba(244, 242, 236, 0.32);
+  transition: color var(--motion-fast) var(--ease-standard);
   text-decoration: none;
   min-height: 36px;
   display: flex;
   align-items: center;
 }
 
-.bottomLinks a:hover { color: rgba(255,255,255,0.68); }
+.bottomLinks a:hover { color: rgba(244, 242, 236, 0.7); }
 
 .divider {
   width: 1px; height: 12px;
-  background: rgba(255,255,255,0.15);
+  background: rgba(244, 242, 236, 0.15);
   display: block;
   flex-shrink: 0;
 }
 
 /* ════════════════════════════════
-  TABLET
+  MOBILE — 2-col link grid
 ════════════════════════════════ */
-@media (max-width: 1024px) {
-  .mainInner {
-    grid-template-columns: 1fr 1fr;
-    gap: clamp(20px, 3vw, 32px);
-  }
-
-  .brandCol {
-    grid-column: 1 / -1;
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 32px;
-    flex-wrap: wrap;
-  }
-
-  .brandDesc { max-width: 360px; }
+.linksGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(16px, 2vw, 28px);
+  align-items: start;
 }
 
 /* ════════════════════════════════
-  MOBILE
+  TABLET / DESKTOP
 ════════════════════════════════ */
-@media (max-width: 768px) {
+@media (min-width: 768px) {
+  .mainInner {
+    grid-template-columns: 1.6fr 1.4fr 1.4fr;
+  }
 
+  .linksGrid {
+    display: contents;
+  }
+
+  .bannerInner {
+    flex-direction: row;
+    text-align: right;
+  }
+
+  .bottomInner {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: right;
+  }
+}
+
+@media (max-width: 767px) {
   .banner { padding: 24px 0; }
 
   .bannerInner {
@@ -406,101 +376,36 @@
   }
 
   .bannerText p { display: none; }
-
   .bannerText h2 { font-size: 1.1rem; margin-bottom: 0; }
 
   .bannerBtn {
     width: 100%;
     justify-content: center;
     min-height: 48px;
-    border-radius: 12px;
     font-size: 0.9rem;
   }
 
   .main { padding: 28px 0 20px; }
 
-  .mainInner {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  .brandCol {
-    grid-column: auto;
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .logo {
-    font-size: 1rem;
-  }
-
   .brandDesc { display: none; }
 
-.socials {
-  gap: 6px;
-  justify-content: center;
-}
+  .socials { gap: 6px; justify-content: center; }
 
-.socialBtn {
-  width: 36px; height: 36px;
-  border-radius: 9px;
-}
+  .socialBtn { width: 34px; height: 34px; }
 
-.linksGrid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(16px, 2vw, 28px);
-  align-items: start;
-}
+  .colTitle { font-size: 0.7rem; margin-bottom: 2px; }
 
-.linkCol {
-  min-width: 0;
-}
-
-.linkList {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-
-}
-
-  .colTitle {
-    font-size: 0.72rem;
-    margin-bottom: 2px;
-  }
-
-
-
-  .footerLink {
-    font-size: 0.8rem;
-    min-height: 32px;
-  }
+  .footerLink { font-size: 0.8rem; min-height: 32px; }
 
   .newsletterCol { gap: 10px; }
 
-  .newsletterDesc { display: none; }
-
+  .newsletterDesc,
   .newsletterNote { display: none; }
-
-  .bottomInner {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 8px;
-  }
-
-  .bottomLinks { justify-content: center; }
 }
 
-/* ════════════════════════════════
-  SMALL MOBILE
-════════════════════════════════ */
 @media (max-width: 480px) {
   .main { padding: 24px 0 16px; }
-
   .trustBadge { font-size: 0.72rem; padding: 6px 11px; }
-
   .bottomLinks a { font-size: 0.68rem; }
-
   .copyright { font-size: 0.68rem; }
 }

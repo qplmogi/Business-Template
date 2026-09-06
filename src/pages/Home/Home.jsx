@@ -7,12 +7,12 @@ import Contact   from './sections/Contact';
 
 function Home() {
     return (
-        <div>
+        <div className="home">
             <Hero />
-            <About />
+            <About />                      
             <Values />
-            <Services />
-            <Portfolio />
+            <Services /> 
+            <Portfolio /> 
             <Contact />
         </div>
     );
